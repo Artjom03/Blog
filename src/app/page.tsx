@@ -4,6 +4,7 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <main className="min-h-screen p-8 animate-fadeIn">
+      <h1>Test</h1>
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-8 text-gray-900 animate-slideDown">
           My Internship Journey
