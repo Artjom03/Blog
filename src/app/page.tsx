@@ -8,7 +8,7 @@ export default function Home() {
         <h1 className="text-4xl font-bold mb-8 text-gray-900 animate-slideDown">
           My Internship Journey
         </h1>
-
+<h1>Test</h1>
         <div className="mb-12 p-6 bg-white rounded-lg shadow-md animate-slideRight">
           <div className="flex flex-col md:flex-row gap-6 items-center">
             <div className="relative w-48 h-48 rounded-lg overflow-hidden shadow-md flex-shrink-0">
