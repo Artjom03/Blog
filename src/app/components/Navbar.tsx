@@ -18,6 +18,18 @@ export default function Navbar() {
             >
               Weekly Reports
             </Link>
+            <Link 
+              href="/blog" 
+              className="text-white hover:text-blue-400 px-3 py-2 text-base font-medium transition-colors"
+            >
+              Blog & Tutorials
+            </Link>
+            <Link 
+              href="/experience" 
+              className="text-white hover:text-blue-400 px-3 py-2 text-base font-medium transition-colors"
+            >
+              My Experience
+            </Link>
           </div>
         </div>
       </div>

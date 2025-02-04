@@ -20,20 +20,38 @@ export default function HomeSidebar() {
 
   return (
     <div className="lg:w-1/3 space-y-6">
-      {/* Quick Links */}
+      {/* Contact Information */}
       <div className="bg-[#1e2432] rounded-lg shadow-md p-6">
-        <h2 className="text-2xl font-semibold mb-4 text-white">Quick Links</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-white">Contact Information</h2>
         <div className="space-y-4">
-          {quickLinks.map((link) => (
+          <div>
+            <p className="text-gray-400">Email:</p>
             <a 
-              key={link.title}
-              href={link.href}
-              className="block p-4 bg-[#2d3548] rounded-lg hover:bg-[#353d54] transition-colors border border-transparent hover:border-blue-400"
+              href="mailto:artjom.kuzmenko03@gmail.com"
+              className="text-blue-400 hover:text-blue-300"
             >
-              <h3 className="font-medium text-blue-400 hover:text-blue-300">{link.title}</h3>
-              <p className="text-sm text-gray-400 mt-1">{link.description}</p>
+              artjom.kuzmenko03@gmail.com
             </a>
-          ))}
+          </div>
+          <div>
+            <p className="text-gray-400">School:</p>
+            <p className="text-white">AP Hogeschool</p>
+          </div>
+          <div>
+            <p className="text-gray-400">Program:</p>
+            <p className="text-white">Software Development</p>
+          </div>
+          <div className="pt-2">
+            <a 
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 bg-[#2d3548] w-full justify-center text-white rounded-lg hover:bg-[#353d54] transition-colors border border-transparent hover:border-blue-400"
+            >
+              <span className="mr-2">📄</span>
+              View Resume
+            </a>
+          </div>
         </div>
       </div>
 
@@ -60,24 +78,20 @@ export default function HomeSidebar() {
         </div>
       </div>
 
-      {/* Contact Information */}
+      {/* Quick Links - Moved to bottom */}
       <div className="bg-[#1e2432] rounded-lg shadow-md p-6">
-        <h2 className="text-2xl font-semibold mb-4 text-white">Contact Information</h2>
-        <div className="space-y-3">
-          <p className="flex flex-col">
-            <span className="text-gray-400">Email:</span>
-            <a href={`mailto:${contactInfo.email}`} className="text-blue-400 hover:text-blue-300">
-              {contactInfo.email}
+        <h2 className="text-2xl font-semibold mb-4 text-white">Quick Links</h2>
+        <div className="space-y-4">
+          {quickLinks.map((link) => (
+            <a 
+              key={link.title}
+              href={link.href}
+              className="block p-4 bg-[#2d3548] rounded-lg hover:bg-[#353d54] transition-colors border border-transparent hover:border-blue-400"
+            >
+              <h3 className="font-medium text-blue-400 hover:text-blue-300">{link.title}</h3>
+              <p className="text-sm text-gray-400 mt-1">{link.description}</p>
             </a>
-          </p>
-          <p className="flex flex-col">
-            <span className="text-gray-400">School:</span>
-            <span className="font-medium text-white">{contactInfo.school}</span>
-          </p>
-          <p className="flex flex-col">
-            <span className="text-gray-400">Program:</span>
-            <span className="font-medium text-white">{contactInfo.program}</span>
-          </p>
+          ))}
         </div>
       </div>
     </div>
