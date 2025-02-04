@@ -152,33 +152,76 @@ export default function WeekPage({ params }: { params: { id: string } }) {
   }
 
   return (
-    <main className="min-h-screen p-8">
+    <main className="min-h-screen p-8 animate-fadeIn">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-8">
-          <div className="flex items-center justify-between">
-            <h1 className="text-4xl font-bold text-gray-900">{week.title}</h1>
-            <span className="text-5xl font-bold text-gray-200">
-              {week.number === 0 ? '00' : week.number.toString().padStart(2, '0')}
-            </span>
+        <div className="flex justify-between items-start mb-8">
+          <div>
+            <h1 className="text-4xl font-bold text-white animate-slideDown">
+              {week.title}
+            </h1>
+            <p className="text-gray-400 mt-2">{week.dateRange}</p>
           </div>
-          <p className="text-gray-600 mt-2">{week.dateRange}</p>
+          <span className="text-6xl font-bold text-gray-700">
+            {week.number === 0 ? '00' : week.number.toString().padStart(2, '0')}
+          </span>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Main Content */}
-          <div className={`${week.number === 0 ? 'lg:w-2/3' : 'w-full'} bg-white rounded-lg shadow-md p-8`}>
+          <div className={`${week.number === 0 ? 'lg:w-2/3' : 'w-full'} bg-[#1e2432] rounded-lg shadow-md p-8`}>
             <div 
-              className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-h2:text-3xl prose-h3:text-2xl"
+              className="prose prose-invert max-w-none prose-headings:text-white prose-p:text-gray-400 prose-li:text-gray-400 prose-strong:text-white"
               dangerouslySetInnerHTML={{ __html: week.content }}
             />
           </div>
 
           {/* Sidebar only for Week 0 */}
           {week.number === 0 && (
-            <WeekSidebar 
-              keyTechnologies={week.keyTechnologies}
-              achievements={week.achievements}
-            />
+            <div className="lg:w-1/3 space-y-6">
+              {/* Technologies Used */}
+              <div className="bg-[#1e2432] rounded-lg shadow-md p-6">
+                <h2 className="text-2xl font-semibold mb-4 text-white">Technologies Used</h2>
+                <div className="flex flex-wrap gap-2">
+                  {week.keyTechnologies.map((tech) => (
+                    <span 
+                      key={tech}
+                      className="px-3 py-1 bg-blue-600 text-white rounded-full text-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Key Achievements */}
+              <div className="bg-[#1e2432] rounded-lg shadow-md p-6">
+                <h2 className="text-2xl font-semibold mb-4 text-white">Key Achievements</h2>
+                <ul className="space-y-3">
+                  {week.achievements.map((achievement, index) => (
+                    <li key={index} className="flex items-center gap-2 text-gray-400">
+                      <svg className="w-5 h-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      {achievement}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Progress */}
+              <div className="bg-[#1e2432] rounded-lg shadow-md p-6">
+                <h2 className="text-2xl font-semibold mb-4 text-white">Progress</h2>
+                <div className="space-y-2">
+                  <div className="flex justify-between text-gray-400">
+                    <span>Completion:</span>
+                    <span>100%</span>
+                  </div>
+                  <div className="w-full bg-[#252b3b] rounded-full h-2">
+                    <div className="bg-blue-600 h-2 rounded-full w-full"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           )}
         </div>
 
@@ -187,7 +230,7 @@ export default function WeekPage({ params }: { params: { id: string } }) {
           {week.number > 0 && (
             <Link
               href={`/weeks/${week.number - 1}`}
-              className="text-blue-600 hover:text-blue-800"
+              className="text-blue-400 hover:text-blue-300 font-medium"
             >
               ← Previous Week
             </Link>
@@ -195,7 +238,7 @@ export default function WeekPage({ params }: { params: { id: string } }) {
           {week.number < weeks.length - 1 && (
             <Link
               href={`/weeks/${week.number + 1}`}
-              className="text-blue-600 hover:text-blue-800 ml-auto"
+              className="text-blue-400 hover:text-blue-300 font-medium ml-auto"
             >
               Next Week →
             </Link>

@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main className="min-h-screen p-8 animate-fadeIn">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8 text-gray-900 animate-slideDown">
+        <h1 className="text-4xl font-bold mb-8 text-white animate-slideDown">
           My Internship Journey
         </h1>
 
@@ -20,7 +20,7 @@ export default function Home() {
           {/* Main Content */}
           <div className="lg:w-2/3 space-y-12">
             {/* About Me Section */}
-            <div className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow animate-slideRight">
+            <div className="p-6 bg-[#1e2432] rounded-lg shadow-md hover:shadow-lg transition-shadow animate-slideRight">
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="relative w-48 h-48 rounded-lg overflow-hidden shadow-md flex-shrink-0">
                   <Image
@@ -33,12 +33,12 @@ export default function Home() {
                   />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-semibold mb-4 text-gray-900">About Me</h2>
-                  <div className="space-y-2 text-gray-700">
-                    <p><span className="font-medium">Name:</span> Kuzmenko Artjom</p>
-                    <p><span className="font-medium">Age:</span> 21</p>
-                    <p><span className="font-medium">Activity:</span> Programming</p>
-                    <p className="mt-4">
+                  <h2 className="text-2xl font-semibold mb-4 text-white">About Me</h2>
+                  <div className="space-y-2 text-gray-300">
+                    <p><span className="font-medium text-white">Name:</span> Kuzmenko Artjom</p>
+                    <p><span className="font-medium text-white">Age:</span> 21</p>
+                    <p><span className="font-medium text-white">Activity:</span> Programming</p>
+                    <p className="mt-4 text-gray-400">
                       Passionate software developer with a focus on web technologies. Currently pursuing an internship
                       to gain hands-on experience in real-world projects.
                     </p>
@@ -48,17 +48,17 @@ export default function Home() {
             </div>
 
             {/* Skills Section */}
-            <div className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <h2 className="text-2xl font-semibold mb-6 text-gray-900">Technical Skills</h2>
+            <div className="p-6 bg-[#1e2432] rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <h2 className="text-2xl font-semibold mb-6 text-white">Technical Skills</h2>
               <div className="grid md:grid-cols-3 gap-6">
                 {skills.map((category) => (
                   <div key={category.name}>
-                    <h3 className="font-medium text-gray-900 mb-3">{category.name}</h3>
+                    <h3 className="font-medium text-white mb-3">{category.name}</h3>
                     <div className="flex flex-wrap gap-2">
                       {category.items.map((skill) => (
                         <span 
                           key={skill}
-                          className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm"
+                          className="px-3 py-1 bg-blue-600 text-white rounded-full text-sm"
                         >
                           {skill}
                         </span>
@@ -71,15 +71,15 @@ export default function Home() {
             
             {/* Weekly Reports Section */}
             <div className="grid gap-6">
-              <article className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow animate-slideUp">
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900">Weekly Reports</h2>
-                <p className="text-gray-600 mb-6">
+              <article className="p-6 bg-[#1e2432] rounded-lg shadow-md hover:shadow-lg transition-shadow animate-slideUp">
+                <h2 className="text-2xl font-semibold mb-4 text-white">Weekly Reports</h2>
+                <p className="text-gray-400 mb-6">
                   View detailed reports of my internship experience, organized by weeks.
                   Follow my journey as I learn and grow in a professional development environment.
                 </p>
                 <Link 
                   href="/weeks" 
-                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+                  className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium"
                 >
                   View all weeks →
                 </Link>
