@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import WeekSidebar from '@/app/components/WeekSidebar'
+import WeekDays from '@/app/components/WeekDays'
 
 interface WeekData {
   number: number
@@ -10,6 +11,11 @@ interface WeekData {
   keyTechnologies: string[]
   achievements: string[]
   content: string
+  days?: {
+    title: string
+    tasks: string[]
+    learnings?: string[]
+  }[]
 }
 
 const weeks: WeekData[] = [
@@ -72,11 +78,6 @@ const weeks: WeekData[] = [
     content: `
       <h2>First Week Highlights</h2>
       <p>My first week was filled with new experiences:</p>
-      <ul>
-        <li>Met the team and got introduced to the company culture</li>
-        <li>Set up my workstation and development environment</li>
-        <li>Started working on my first tasks</li>
-      </ul>
     `
   },
   {
@@ -143,6 +144,97 @@ for (let i = 3; i <= 14; i++) {
   })
 }
 
+// Update the content for weeks 1-15
+const weekDays = {
+  number: 1,
+  days: [
+    {
+      title: "Monday",
+      tasks: [
+        "Team introduction and office tour",
+        "Received work laptop and domain access",
+        "Set up development environment",
+        "Attended 2 team meetings",
+        "Completed Hoxhunt cyber security training"
+      ],
+      learnings: [
+        "Company environment and team structure",
+        "Security protocols and best practices",
+        "Team bonding (Lunch with ICT team at McDonald's)"
+      ]
+    },
+    {
+      title: "Tuesday",
+      tasks: [
+        "Explored VAB's Angular project",
+        "Started phone number form component with country flags",
+        "Set up VAB backend environment",
+        "Worked on assigned ticket from colleague",
+        "Resolved Git push issues"
+      ],
+      learnings: [
+        "Project structure and workflow",
+        "Sprint planning process",
+        "Git troubleshooting",
+        "Security importance (laptop incident)"
+      ]
+    },
+    {
+      title: "Wednesday",
+      tasks: [
+        "Fixed local dev.vab.be access issue",
+        "Completed assigned ticket",
+        "Studied RxJS fundamentals",
+        "Watched tutorial videos on RxJS"
+      ],
+      learnings: [
+        "Local development environment troubleshooting",
+        "RxJS concepts and implementation",
+        "Ticket completion workflow"
+      ]
+    },
+    {
+      title: "Thursday",
+      tasks: [
+        "Researched Sitecore fields and templates",
+        "Observed cross-team project meeting",
+        "Created Sitecore fields for phone number component",
+        "Completed backend setup for component",
+        "Started frontend preparation"
+      ],
+      learnings: [
+        "Sitecore CMS basics",
+        "Component development workflow",
+        "Backend-frontend integration process"
+      ]
+    },
+    {
+      title: "Friday",
+      tasks: [
+        "Weekly review",
+        "Documentation",
+        "Planning next week"
+      ],
+      learnings: [
+        "Week reflections",
+        "Areas for improvement"
+      ]
+    }
+  ]
+}
+
+// Update the weeks array to include the daily breakdown
+for (let i = 1; i <= 14; i++) {
+  weeks[i] = {
+    ...weeks[i],
+    days: weekDays.days.map(day => ({
+      ...day,
+      tasks: day.tasks,
+      learnings: day.learnings
+    }))
+  }
+}
+
 export default function WeekPage({ params }: { params: { id: string } }) {
   const weekNumber = parseInt(params.id)
   const week = weeks.find(w => w.number === weekNumber)
@@ -173,6 +265,9 @@ export default function WeekPage({ params }: { params: { id: string } }) {
               className="prose prose-invert max-w-none prose-headings:text-white prose-p:text-gray-400 prose-li:text-gray-400 prose-strong:text-white"
               dangerouslySetInnerHTML={{ __html: week.content }}
             />
+            {week.number > 0 && week.days && (
+              <WeekDays days={week.days} />
+            )}
           </div>
 
           {/* Sidebar only for Week 0 */}
