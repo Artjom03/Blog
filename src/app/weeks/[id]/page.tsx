@@ -97,7 +97,6 @@ const weeks: WeekData[] = [
       </ul>
     `
   },
-  // ... weeks 3-14 with similar structure
   {
     number: 15,
     title: "Final Week",
@@ -119,27 +118,51 @@ const weeks: WeekData[] = [
 
 // Generate the middle weeks automatically
 for (let i = 3; i <= 14; i++) {
+  // Start with February 17 (week 3's start)
+  const startDate = new Date(2025, 1, 17); // Month is 0-based, so 1 is February
+  startDate.setDate(startDate.getDate() + ((i-3) * 7)); // Add weeks
+  
+  const endDate = new Date(startDate);
+  endDate.setDate(endDate.getDate() + 4); // Add 4 days to get to Friday
+
+  const formatDateRange = (start: Date, end: Date) => {
+    const startMonth = start.toLocaleString('default', { month: 'long' });
+    const endMonth = end.toLocaleString('default', { month: 'long' });
+    
+    if (startMonth === endMonth) {
+      return `${startMonth} ${start.getDate()}-${end.getDate()}, 2025`;
+    } else {
+      return `${startMonth} ${start.getDate()} - ${endMonth} ${end.getDate()}, 2025`;
+    }
+  };
+
   weeks.splice(i, 0, {
     number: i,
     title: `Week ${i}`,
     description: `Week ${i} of my internship journey.`,
-    dateRange: `February ${3 + ((i-1) * 7)} - February ${9 + ((i-1) * 7)}, 2025`,
+    dateRange: formatDateRange(startDate, endDate),
     keyTechnologies: ["Angular", "TypeScript", "MySQL"],
     achievements: ["Ongoing project work", "Learning new technologies", "Team collaboration"],
     content: `
-      <h2>Week ${i} Overview</h2>
-      <p>This week's focus and achievements:</p>
-      <ul>
-        <li>Continued working on ongoing projects</li>
-        <li>Learned new technologies and methodologies</li>
-        <li>Collaborated with team members on various tasks</li>
-      </ul>
-      <p>Key learnings and observations:</p>
-      <ul>
-        <li>Technical skills improved in specific areas</li>
-        <li>Better understanding of development processes</li>
-        <li>Enhanced communication with team members</li>
-      </ul>
+      <div class="flex flex-col md:flex-row gap-8 mb-8">
+        <div class="md:w-1/2">
+          <h2 class="text-xl font-semibold mb-4">This week's focus and achievements:</h2>
+          <ul class="space-y-2">
+            <li>Continued working on ongoing projects</li>
+            <li>Learned new technologies and methodologies</li>
+            <li>Collaborated with team members on various tasks</li>
+          </ul>
+        </div>
+        
+        <div class="md:w-1/2">
+          <h2 class="text-xl font-semibold mb-4">Key learnings and observations:</h2>
+          <ul class="space-y-2">
+            <li>Technical skills improved in specific areas</li>
+            <li>Better understanding of development processes</li>
+            <li>Enhanced communication with team members</li>
+          </ul>
+        </div>
+      </div>
     `
   })
 }
@@ -223,15 +246,296 @@ const weekDays = {
   ]
 }
 
-// Update the weeks array to include the daily breakdown
+// After the weekDays definition, add specific content for week 2
+const week2Days = {
+  number: 2,
+  days: weekDays.days.map(day => ({
+    ...day,
+    tasks: day.title === "Friday" ? [
+      "Added additional requirements",
+      "Found and documented a bug (to be fixed next week)",
+      "Weekly review",
+      "Documentation"
+    ] : day.tasks,
+    learnings: day.title === "Friday" ? [
+      "Bug identification and documentation",
+      "Week reflections"
+    ] : day.learnings
+  }))
+}
+
+// Add week 3 specific content
+const week3Days = {
+  number: 3,
+  days: [
+    {
+      title: "Monday",
+      tasks: [
+        "Investigated reported bug",
+        "Fixed initial bug issues",
+        "Added custom drop-down implementation",
+        "Encountered and documented new bugs"
+      ],
+      learnings: [
+        "Bug investigation process",
+        "Custom dropdown development",
+        "Issue tracking and documentation"
+      ]
+    },
+    {
+      title: "Tuesday",
+      tasks: [
+        "Continued bug fixes",
+        "Completed component development",
+        "Prepared component for mentor review"
+      ],
+      learnings: [
+        "Component optimization",
+        "Code review preparation",
+        "Bug resolution strategies"
+      ]
+    },
+    {
+      title: "Wednesday",
+      tasks: [
+        "Code formatting and optimization",
+        "Added extra Sitecore field",
+        "Implemented backend changes",
+        "Integrated new field in frontend"
+      ],
+      learnings: [
+        "Code optimization techniques",
+        "Full-stack integration process",
+        "Sitecore field management"
+      ]
+    },
+    {
+      title: "Thursday",
+      tasks: [
+        "Finalized component development",
+        "Component review and approval",
+        "Started new ticket from colleague"
+      ],
+      learnings: [
+        "Component completion process",
+        "Cross-team collaboration",
+        "Task transition management"
+      ]
+    },
+    {
+      title: "Friday",
+      tasks: [
+        "Completed assigned ticket",
+        "Met with mentor about new major project",
+        "Project planning and discussion"
+      ],
+      learnings: [
+        "Project planning",
+        "Mentor collaboration",
+        "Long-term project preparation"
+      ]
+    }
+  ]
+}
+
+// Add week 4 specific content
+const week4Days = {
+  number: 4,
+  days: [
+    {
+      title: "Monday",
+      tasks: [
+        "Morning: School intervision moment",
+        "Afternoon: Started Sitecore project section",
+        "Created initial layout",
+        "Started placeholder settings implementation"
+      ],
+      learnings: [
+        "School-work balance management",
+        "Sitecore layout fundamentals",
+        "Placeholder settings basics"
+      ]
+    },
+    {
+      title: "Tuesday",
+      tasks: [
+        "Completed placeholder settings",
+        "Started creating renderings",
+        "Project structure optimization"
+      ],
+      learnings: [
+        "Sitecore rendering creation",
+        "Placeholder settings configuration"
+      ]
+    },
+    {
+      title: "Wednesday",
+      tasks: [
+        "Continued Sitecore development",
+        "Attended event at Antwerp Expo",
+        "Documentation update"
+      ],
+      learnings: [
+        "Sitecore development basics"
+      ]
+    },
+    {
+      title: "Thursday",
+      tasks: [
+        "Attended PI Planning",
+        "Started template development",
+        "Afternoon development session"
+      ],
+      learnings: [
+        "PI Planning process",
+        "Template development basics"
+      ]
+    },
+    {
+      title: "Friday",
+      tasks: [
+        "Continued Sitecore development",
+        "Advanced template work",
+        "Template structure refinement"
+      ],
+      learnings: [
+        "Template development techniques"
+      ]
+    }
+  ]
+}
+
+// Update week 5's content
+const week5Days = {
+  number: 5,
+  days: [
+    {
+      title: "Monday",
+      tasks: [
+        "Continued Sitecore development",
+        "Finalized all Sitecore configurations"
+      ],
+      learnings: [
+        "Sitecore configuration completion"
+      ]
+    },
+    {
+      title: "Tuesday",
+      tasks: [
+        "Sitecore review with mentor",
+        "Started Angular component development",
+        "Component architecture planning"
+      ],
+      learnings: [
+        "Mentor feedback implementation",
+        "Angular component structure"
+      ]
+    },
+    {
+      title: "Wednesday",
+      tasks: [
+        "Continued Angular component development",
+        "Worked on previously rejected ticket"
+      ],
+      learnings: [
+        "Component development process",
+        "Handling feedback and revisions"
+      ]
+    },
+    {
+      title: "Thursday",
+      tasks: [
+        "Component creation and functionality implementation",
+        "Testing and debugging"
+      ],
+      learnings: [
+        "Angular component functionality",
+        "Testing procedures"
+      ]
+    },
+    {
+      title: "Friday",
+      tasks: [
+        "Continued component development",
+        "Component functionality implementation"
+      ],
+      learnings: [
+        "Component integration",
+        "Angular development practices"
+      ]
+    }
+  ]
+}
+
+// Add week 6's content
+const week6Days = {
+  number: 6,
+  days: [
+    {
+      title: "Monday",
+      tasks: [
+        "Met new Scrum Master",
+        "Team introduction session",
+        "Component development",
+        "Visual testing setup with mentor (ongoing)"
+      ],
+      learnings: [
+        "Team dynamics",
+        "Visual testing preparation"
+      ]
+    },
+    {
+      title: "Tuesday",
+      tasks: [
+        "Continued component development",
+        "Independent work (mentor unavailable)"
+      ],
+      learnings: [
+        "Independent problem-solving",
+        "Component development progress"
+      ]
+    },
+    {
+      title: "Wednesday",
+      tasks: [
+        "Angular component development",
+        "Component implementation"
+      ],
+      learnings: [
+        "Angular development techniques",
+        "Component structure"
+      ]
+    },
+    {
+      title: "Thursday",
+      tasks: [
+        "Angular development continuation",
+        "Git issue resolution with colleague",
+        "Extended Git troubleshooting session"
+      ],
+      learnings: [
+        "Git problem-solving",
+        "Team collaboration",
+        "Version control management"
+      ]
+    }
+  ]
+}
+
+// Update the weeks array to include week 6 content
 for (let i = 1; i <= 14; i++) {
   weeks[i] = {
     ...weeks[i],
-    days: weekDays.days.map(day => ({
-      ...day,
-      tasks: day.tasks,
-      learnings: day.learnings
-    }))
+    days: i === 2 ? week2Days.days : 
+          i === 3 ? week3Days.days :
+          i === 4 ? week4Days.days :
+          i === 5 ? week5Days.days :
+          i === 6 ? week6Days.days :
+          weekDays.days.map(day => ({
+            ...day,
+            tasks: day.tasks,
+            learnings: day.learnings
+          }))
   }
 }
 
@@ -244,25 +548,25 @@ export default function WeekPage({ params }: { params: { id: string } }) {
   }
 
   return (
-    <main className="min-h-screen p-8 animate-fadeIn">
+    <main className="min-h-screen p-4 sm:p-8 animate-fadeIn">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-start mb-8">
-          <div>
-            <h1 className="text-4xl font-bold text-white animate-slideDown">
+        <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start mb-6 sm:mb-8">
+          <div className="text-center sm:text-left mb-4 sm:mb-0">
+            <h1 className="text-3xl sm:text-4xl font-bold text-white animate-slideDown hover:scale-105 transition-transform duration-300">
               {week.title}
             </h1>
-            <p className="text-gray-400 mt-2">{week.dateRange}</p>
+            <p className="text-gray-400 mt-2 animate-fadeIn text-sm sm:text-base">{week.dateRange}</p>
           </div>
-          <span className="text-6xl font-bold text-gray-700">
+          <span className="text-4xl sm:text-6xl font-bold text-gray-700 hover:text-gray-500 transition-colors duration-300">
             {week.number === 0 ? '00' : week.number.toString().padStart(2, '0')}
           </span>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex flex-col lg:flex-row gap-4 sm:gap-8">
           {/* Main Content */}
-          <div className={`${week.number === 0 ? 'lg:w-2/3' : 'w-full'} bg-[#1e2432] rounded-lg shadow-md p-8`}>
+          <div className={`${week.number === 0 ? 'lg:w-2/3' : 'w-full'} bg-[#1e2432] rounded-lg shadow-md p-4 sm:p-8 hover:shadow-lg transition-shadow duration-300 animate-slideUp`}>
             <div 
-              className="prose prose-invert max-w-none prose-headings:text-white prose-p:text-gray-400 prose-li:text-gray-400 prose-strong:text-white"
+              className="prose prose-invert max-w-none prose-headings:text-white prose-p:text-gray-400 prose-li:text-gray-400 prose-strong:text-white prose-sm sm:prose-base [&_ul]:list-none [&_ul]:pl-0"
               dangerouslySetInnerHTML={{ __html: week.content }}
             />
             {week.number > 0 && week.days && (
@@ -272,9 +576,9 @@ export default function WeekPage({ params }: { params: { id: string } }) {
 
           {/* Sidebar only for Week 0 */}
           {week.number === 0 && (
-            <div className="lg:w-1/3 space-y-6">
+            <div className="lg:w-1/3 space-y-4 sm:space-y-6">
               {/* Technologies Used */}
-              <div className="bg-[#1e2432] rounded-lg shadow-md p-6">
+              <div className="bg-[#1e2432] rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                 <h2 className="text-2xl font-semibold mb-4 text-white">Technologies Used</h2>
                 <div className="flex flex-wrap gap-2">
                   {week.keyTechnologies.map((tech) => (
@@ -289,7 +593,7 @@ export default function WeekPage({ params }: { params: { id: string } }) {
               </div>
 
               {/* Key Achievements */}
-              <div className="bg-[#1e2432] rounded-lg shadow-md p-6">
+              <div className="bg-[#1e2432] rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                 <h2 className="text-2xl font-semibold mb-4 text-white">Key Achievements</h2>
                 <ul className="space-y-3">
                   {week.achievements.map((achievement, index) => (
@@ -304,7 +608,7 @@ export default function WeekPage({ params }: { params: { id: string } }) {
               </div>
 
               {/* Progress */}
-              <div className="bg-[#1e2432] rounded-lg shadow-md p-6">
+              <div className="bg-[#1e2432] rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                 <h2 className="text-2xl font-semibold mb-4 text-white">Progress</h2>
                 <div className="space-y-2">
                   <div className="flex justify-between text-gray-400">
@@ -321,11 +625,11 @@ export default function WeekPage({ params }: { params: { id: string } }) {
         </div>
 
         {/* Navigation */}
-        <div className="mt-8 flex justify-between">
+        <div className="mt-6 sm:mt-8 flex justify-between text-sm sm:text-base">
           {week.number > 0 && (
             <Link
               href={`/weeks/${week.number - 1}`}
-              className="text-blue-400 hover:text-blue-300 font-medium"
+              className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-300 hover:-translate-x-1 transform px-3 py-2 rounded-lg hover:bg-[#1e2432]"
             >
               ← Previous Week
             </Link>
@@ -333,7 +637,7 @@ export default function WeekPage({ params }: { params: { id: string } }) {
           {week.number < weeks.length - 1 && (
             <Link
               href={`/weeks/${week.number + 1}`}
-              className="text-blue-400 hover:text-blue-300 font-medium ml-auto"
+              className="text-blue-400 hover:text-blue-300 font-medium ml-auto transition-colors duration-300 hover:translate-x-1 transform px-3 py-2 rounded-lg hover:bg-[#1e2432]"
             >
               Next Week →
             </Link>

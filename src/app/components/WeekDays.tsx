@@ -4,38 +4,53 @@ interface DayContent {
   learnings?: string[];
 }
 
-interface WeekDaysProps {
+interface WeekDayProps {
   days: DayContent[];
 }
 
-export default function WeekDays({ days }: WeekDaysProps) {
+export default function WeekDays({ days }: WeekDayProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mt-6">
-      {days.map((day, index) => (
-        <div key={index} className="bg-[#252d3d] p-4 rounded-lg">
-          <h3 className="text-lg font-medium text-white mb-3">{day.title}</h3>
-          <div className="space-y-4">
-            <div>
-              <h4 className="text-blue-400 text-sm font-medium mb-2">Tasks</h4>
-              <ul className="space-y-2">
-                {day.tasks.map((task, i) => (
-                  <li key={i} className="text-gray-300 text-sm">• {task}</li>
-                ))}
-              </ul>
+    <div className="mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+        {days.map((day, index) => (
+          <div 
+            key={index}
+            className="bg-[#252b3b] rounded-lg p-4 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+          >
+            <h3 className="text-xl font-semibold text-white mb-4">{day.title}</h3>
+            
+            <div className="space-y-4">
+              {day.tasks.length > 0 && (
+                <div>
+                  <h4 className="text-blue-400 font-medium mb-2">Tasks</h4>
+                  <ul className="space-y-2 text-sm text-gray-400">
+                    {day.tasks.map((task, taskIndex) => (
+                      <li key={taskIndex} className="flex items-start gap-2">
+                        <span className="text-blue-400 mt-1">•</span>
+                        <span>{task}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {day.learnings && day.learnings.length > 0 && (
+                <div>
+                  <h4 className="text-green-400 font-medium mb-2">Learnings</h4>
+                  <ul className="space-y-2 text-sm text-gray-400">
+                    {day.learnings.map((learning, learningIndex) => (
+                      <li key={learningIndex} className="flex items-start gap-2">
+                        <span className="text-green-400 mt-1">•</span>
+                        <span>{learning}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
-            {day.learnings && (
-              <div>
-                <h4 className="text-green-400 text-sm font-medium mb-2">Learnings</h4>
-                <ul className="space-y-2">
-                  {day.learnings.map((learning, i) => (
-                    <li key={i} className="text-gray-300 text-sm">• {learning}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   )
 } 
