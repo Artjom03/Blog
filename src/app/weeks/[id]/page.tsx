@@ -467,7 +467,7 @@ const week5Days = {
   ]
 }
 
-// Add week 6's content
+// Update week 6's content - modify Friday
 const week6Days = {
   number: 6,
   days: [
@@ -518,11 +518,116 @@ const week6Days = {
         "Team collaboration",
         "Version control management"
       ]
+    },
+    {
+      title: "Friday",
+      tasks: [
+        "Set up visual testing environment",
+        "Component testing and adjustments"
+      ],
+      learnings: [
+        "Visual implementation"
+      ]
     }
   ]
 }
 
-// Update the weeks array to include week 6 content
+// Update week 7's content - modify Tuesday
+const week7Days = {
+  number: 7,
+  days: [
+    {
+      title: "Monday",
+      tasks: [
+        "Component and Sitecore implementation work",
+        "Team lunch (Farewell to colleagues)",
+        "Attended retrospective meeting"
+      ],
+      learnings: [
+        "Team dynamics",
+        "Sprint retrospective process"
+      ]
+    },
+    {
+      title: "Tuesday",
+      tasks: [
+        "Component development with Sitecore",
+        "Set up test environment"
+      ],
+      learnings: [
+        "Test environment setup",
+        "Visual testing procedures"
+      ]
+    },
+    {
+      title: "Wednesday",
+      tasks: [
+        "Continued component development",
+        "Sitecore integration work"
+      ],
+      learnings: [
+        "Component integration",
+        "Sitecore development"
+      ]
+    },
+    {
+      title: "Thursday",
+      tasks: [
+        "Follow-up on previous day's work",
+        "Component refinements"
+      ],
+      learnings: [
+        "Component optimization",
+        "Development continuity"
+      ]
+    },
+    {
+      title: "Friday",
+      tasks: [
+        "Continued development from previous days",
+        "Project progress review"
+      ],
+      learnings: [
+        "Progress tracking",
+        "Development iteration"
+      ]
+    }
+  ]
+}
+
+// Add week 8's content
+const week8Days = {
+  number: 8,
+  days: [
+    {
+      title: "Monday",
+      tasks: [
+        "Website component development",
+        "Layout improvements",
+        "Evaluation meeting with mentor",
+        "Progress review"
+      ],
+      learnings: [
+        "Mentor feedback",
+        "Website layout optimization"
+      ]
+    },
+    {
+      title: "Tuesday",
+      tasks: [
+        "Component development continuation",
+        "Website styling improvements",
+        "Bug fixes and problem solving"
+      ],
+      learnings: [
+        "Bug resolution",
+        "Component styling"
+      ]
+    }
+  ]
+}
+
+// Update the weeks array to include week 7 and 8 content
 for (let i = 1; i <= 14; i++) {
   weeks[i] = {
     ...weeks[i],
@@ -531,6 +636,8 @@ for (let i = 1; i <= 14; i++) {
           i === 4 ? week4Days.days :
           i === 5 ? week5Days.days :
           i === 6 ? week6Days.days :
+          i === 7 ? week7Days.days :
+          i === 8 ? week8Days.days :
           weekDays.days.map(day => ({
             ...day,
             tasks: day.tasks,
