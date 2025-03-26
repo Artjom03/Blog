@@ -13,6 +13,12 @@ export default function Navbar() {
               Home
             </Link>
             <Link 
+              href="/about" 
+              className="text-white hover:text-blue-400 px-3 py-2 text-base font-medium transition-colors"
+            >
+              About
+            </Link>
+            <Link 
               href="/weeks" 
               className="text-white hover:text-blue-400 px-3 py-2 text-base font-medium transition-colors"
             >
