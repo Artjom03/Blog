@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function HomeSidebar() {
   const quickLinks = [
     { title: "Latest Week", href: "/weeks/1", description: "View my most recent internship week" },
@@ -77,14 +79,14 @@ export default function HomeSidebar() {
         <h2 className="text-2xl font-semibold mb-4 text-white">Quick Links</h2>
         <div className="space-y-4">
           {quickLinks.map((link) => (
-            <a 
+            <Link 
               key={link.title}
               href={link.href}
               className="block p-4 bg-[#2d3548] rounded-lg hover:bg-[#353d54] transition-colors border border-transparent hover:border-blue-400"
             >
               <h3 className="font-medium text-blue-400 hover:text-blue-300">{link.title}</h3>
               <p className="text-sm text-gray-400 mt-1">{link.description}</p>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

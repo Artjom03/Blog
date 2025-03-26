@@ -7,7 +7,7 @@ interface Step {
   command?: string;  // Make command optional
 }
 
-interface Section {
+interface SectionType {  // Renamed from Section to SectionType
   title: string;
   content: string;
   items?: string[];
