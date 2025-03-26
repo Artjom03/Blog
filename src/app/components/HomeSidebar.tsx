@@ -12,12 +12,6 @@ export default function HomeSidebar() {
     location: "Zwijndrecht, Belgium"
   }
 
-  const contactInfo = {
-    email: "artjom.kuzmenko03@gmail.com",
-    school: "AP Hogeschool",
-    program: "Software Development"
-  }
-
   return (
     <div className="lg:w-1/3 space-y-6">
       {/* Contact Information */}

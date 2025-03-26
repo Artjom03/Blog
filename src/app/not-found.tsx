@@ -1,4 +1,4 @@
-import Link from 'next/link'
+// import Link from 'next/link'
 
 export default function NotFound() {
   return (
@@ -9,12 +9,12 @@ export default function NotFound() {
         <p className="text-gray-100 mb-8">
           Sorry, the page you are looking for doesn't exist or has been moved.
         </p>
-        <a 
+        <Link 
           href="/" 
           className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center"
         >
           ← Back to Home
-        </a>
+        </Link>
       </div>
     </main>
   )
