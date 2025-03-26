@@ -18,7 +18,7 @@ interface SectionType {  // Renamed from Section to SectionType
 }
 
 export default function GettingStartedAngular() {
-  const sections = [
+  const sections: SectionType[] = [
     {
       title: "Prerequisites",
       content: "Before starting with Angular at VAB, ensure you have:",

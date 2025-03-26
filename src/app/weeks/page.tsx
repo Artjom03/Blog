@@ -168,7 +168,7 @@ export default function WeeklyReports() {
                     <span
                       key={tag}
                       className={`px-3 py-1 rounded-full text-sm ${
-                        {
+                        tag === 'all' ? '' : {
                           'teambuilding': 'bg-purple-500/20 text-purple-400',
                           'code': 'bg-blue-500/20 text-blue-400',
                           'lessons-learned': 'bg-green-500/20 text-green-400',
