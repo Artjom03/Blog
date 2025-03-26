@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import WeekSidebar from '@/app/components/WeekSidebar'
 import WeekDays from '@/app/components/WeekDays'
 
 interface WeekData {
