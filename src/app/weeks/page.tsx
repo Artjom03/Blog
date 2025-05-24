@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-type Tag = 'teambuilding' | 'code' | 'lessons-learned' | 'fails' | 'wins' | 'reflection' | 'all'
+type Tag = 'teambuilding' | 'code' | 'lessons-learned' | 'fails' | 'wins' | 'reflection' | 'all' | 'goals'
 
 interface WeeklyReport {
   week: number
@@ -79,10 +79,73 @@ export default function WeeklyReports() {
       description: "Improving application performance, implementing best practices, and code refactoring.",
       date: "March 25-29, 2024",
       tags: ['code', 'wins', 'lessons-learned']
+    },
+    {
+      week: 9,
+      title: "Header Development Challenges",
+      description: "Addressing header issues, collaborating with the mentor, and improving code structure.",
+      date: "April 1-5, 2024",
+      tags: ['code', 'reflection']
+    },
+    {
+      week: 10,
+      title: "Navigation and Language Features",
+      description: "Developing the navigation bar and adding language switching functionality.",
+      date: "April 8-12, 2024",
+      tags: ['code', 'wins']
+    },
+    {
+      week: 11,
+      title: "CSS Debugging and Aansluitingsrecht",
+      description: "Resolving CSS issues and starting work on the Aansluitingsrecht project.",
+      date: "April 15-19, 2024",
+      tags: ['code', 'lessons-learned']
+    },
+    {
+      week: 12,
+      title: "Aansluitingsrecht Development",
+      description: "Focused on developing features for the Aansluitingsrecht project.",
+      date: "April 22-26, 2024",
+      tags: ['code', 'wins']
+    },
+    {
+      week: 13,
+      title: "Advanced Mapping Techniques",
+      description: "Exploring advanced mapping techniques and improving project workflows.",
+      date: "April 29 - May 3, 2024",
+      tags: ['code', 'lessons-learned']
+    },
+    {
+      week: 14,
+      title: "Finalizing Features",
+      description: "Finalizing key features and preparing for project handoff.",
+      date: "May 6-10, 2024",
+      tags: ['code', 'wins']
+    },
+    {
+      week: 15,
+      title: "Final Week",
+      description: "Wrapping up the internship experience and reflecting on the journey.",
+      date: "May 13-17, 2024",
+      tags: ['reflection', 'lessons-learned']
+    },
+    {
+      week: 16,
+      title: "Post-Internship Planning",
+      description: "Planning next steps and setting goals for the future.",
+      date: "May 20-24, 2024",
+      tags: ['reflection', 'goals']
+    },
+    {
+      week: 17,
+      title: "Looking Ahead",
+      description: "Reflecting on the internship and preparing for upcoming challenges.",
+      date: "May 27-31, 2024",
+      tags: ['reflection', 'goals']
     }
   ]
 
-  const tags: Tag[] = ['all', 'teambuilding', 'code', 'lessons-learned', 'fails', 'wins', 'reflection']
+  const tags: Tag[] = ['all', 'teambuilding', 'code', 'lessons-learned', 'fails', 'wins', 'reflection', 'goals']
 
   const filteredReports = reports
     .filter(report => {
@@ -174,7 +237,8 @@ export default function WeeklyReports() {
                           'lessons-learned': 'bg-green-500/20 text-green-400',
                           'fails': 'bg-red-500/20 text-red-400',
                           'wins': 'bg-yellow-500/20 text-yellow-400',
-                          'reflection': 'bg-indigo-500/20 text-indigo-400'
+                          'reflection': 'bg-indigo-500/20 text-indigo-400',
+                          'goals': 'bg-orange-500/20 text-orange-400'
                         }[tag]
                       }`}
                     >
@@ -189,4 +253,4 @@ export default function WeeklyReports() {
       </div>
     </main>
   )
-} 
+}

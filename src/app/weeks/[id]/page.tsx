@@ -17,6 +17,9 @@ interface WeekData {
   }[]
 }
 
+// Move all .days assignments INSIDE the weeks array definition, not after it.
+// For each week object that has days, include the days property directly in the object.
+
 const weeks: WeekData[] = [
   {
     number: 0,
@@ -27,11 +30,11 @@ const weeks: WeekData[] = [
     achievements: ["Secured internship at VAB", "Completed documentation", "Started learning Angular"],
     content: `
       <h2>Preparation Phase</h2>
-      <p>My journey towards this internship started well before the actual start date:</p>
+      <p>My journey towards this internship started well before the actual start date. Here is a detailed overview of the steps and experiences leading up to my first day at VAB:</p>
       
       <div class="mt-6">
         <h3 class="text-lg font-medium text-gray-900">July 2024: The Search</h3>
-        <p class="mt-2">Started actively searching for internship opportunities that would align with my career goals in software development.</p>
+        <p class="mt-2">I began actively searching for internship opportunities that would align with my career goals in software development. I researched companies, prepared my CV, and reached out to potential employers.</p>
       </div>
 
       <div class="mt-6">
@@ -64,7 +67,16 @@ const weeks: WeekData[] = [
         </ul>
       </div>
 
-      
+      <div class="mt-6">
+        <h3 class="text-lg font-medium text-gray-900">Setting Goals</h3>
+        <p class="mt-2">Before starting, I set personal goals for my internship:</p>
+        <ul>
+          <li>Gain hands-on experience with Angular and modern web development</li>
+          <li>Understand real-world software development workflows</li>
+          <li>Improve my teamwork and communication skills</li>
+          <li>Deliver meaningful contributions to the company</li>
+        </ul>
+      </div>
     `
   },
   {
@@ -77,24 +89,285 @@ const weeks: WeekData[] = [
     content: `
       <h2>First Week Highlights</h2>
       <p>My first week was filled with new experiences:</p>
-    `
+      <ul>
+        <li>Team introduction and office tour</li>
+        <li>Received work laptop and domain access</li>
+        <li>Set up development environment</li>
+        <li>Attended 2 team meetings</li>
+        <li>Completed Hoxhunt cyber security training</li>
+      </ul>
+    `,
+    days: [
+      { title: "Monday", tasks: ["Team introduction and office tour", "Received work laptop and domain access", "Set up development environment", "Attended 2 team meetings", "Completed Hoxhunt cyber security training"], learnings: ["Company environment and team structure", "Security protocols and best practices", "Team bonding"] },
+      { title: "Tuesday", tasks: ["Explored VAB's Angular project", "Started phone number form component with country flags", "Set up VAB backend environment", "Worked on assigned ticket from colleague", "Resolved Git push issues"], learnings: ["Project structure and workflow", "Sprint planning process", "Git troubleshooting", "Security importance"] },
+      { title: "Wednesday", tasks: ["Fixed local dev.vab.be access issue", "Completed assigned ticket", "Studied RxJS fundamentals", "Watched tutorial videos on RxJS"], learnings: ["Local development environment troubleshooting", "RxJS concepts and implementation", "Ticket completion workflow"] },
+      { title: "Thursday", tasks: ["Researched Sitecore fields and templates", "Observed cross-team project meeting", "Created Sitecore fields for phone number component", "Completed backend setup for component", "Started frontend preparation"], learnings: ["Sitecore CMS basics", "Component development workflow", "Backend-frontend integration process"] },
+      { title: "Friday", tasks: ["Weekly review", "Documentation", "Planning next week"], learnings: ["Week reflections", "Areas for improvement"] }
+    ]
   },
   {
     number: 2,
-    title: "Week 2",
-    description: "Second week of learning and development.",
-    dateRange: "February 10 - February 16, 2025",
-    keyTechnologies: ["Angular", "TypeScript", "MySQL"],
-    achievements: ["Code contributions", "Team meetings", "Project progress"],
+    title: "Angular Fundamentals",
+    description: "Deep dive into Angular framework, setting up first components, and learning about the project structure.",
+    dateRange: "February 10-16, 2025",
+    keyTechnologies: ["Angular", "TypeScript"],
+    achievements: ["Learned Angular basics", "Set up first components", "Understood project structure"],
     content: `
-      <h2>Week 2 Progress</h2>
-      <p>Building on the foundation from week 1:</p>
+      <h2>Week 2 Highlights</h2>
+      <p>This week focused on learning Angular fundamentals and setting up the project:</p>
+    `,
+    days: [
+      { title: "Monday", tasks: ["Begonnen met verder werken van component.", "Mentor gekomen naar de stageplaats.", "Progressie op het component, alles wordt duidelijker en het lukt beter.", "Samen gezeten met mijn begeleider.", "Component was bijna af, paar problemen bij het testen.", "Een PR gedaan, morgen kan ik verder doen."], learnings: ["Component progress"] },
+      { title: "Tuesday", tasks: ["Op test gekeken naar mijn component.", "Wilt niet inladen, samen gezeten met mentor.", "Probleem gevonden, nu verder werken, oplossen en aan CSS beginnen."], learnings: ["Debugging and CSS"] },
+      { title: "Wednesday", tasks: ["Input gefixt, het component werkt volledig."], learnings: ["Input handling"] },
+      { title: "Thursday", tasks: ["Verlof."], learnings: ["N/A"] },
+      { title: "Friday", tasks: ["Nog enkele kleine dingen moesten toegevoegd worden.", "Ondertussen een bug gevonden, niet afgewerkt. Voor volgende week."], learnings: ["Bug identification"] }
+    ]
+  },
+  {
+    number: 3,
+    title: "Component Development",
+    description: "Building reusable components, implementing responsive designs, and working with Angular services.",
+    dateRange: "February 17-21, 2025",
+    keyTechnologies: ["Angular", "TypeScript"],
+    achievements: ["Built reusable components", "Implemented responsive designs", "Worked with Angular services"],
+    content: `
+      <h2>Week 3 Highlights</h2>
+      <p>This week focused on component development and responsive design:</p>
+    `,
+    days: [
+      { title: "Monday", tasks: ["Onderzoek bug.", '"Gefixt", dan nog een zelfgemaakt drop-down moeten toevoegen.', "Paar andere bugs ontstaan."], learnings: ["Bug fixing"] },
+      { title: "Tuesday", tasks: ["Verder werken aan de bugs.", "Component is af, moet bekeken worden door mentor."], learnings: ["Bug resolution"] },
+      { title: "Wednesday", tasks: ["Code formatteren en verkorten.", "Nog iets moeten toevoegen. Een extra field. Eerst via Sitecore dan de backend en ten slotte integreren in de frontend."], learnings: ["Code optimization"] },
+      { title: "Thursday", tasks: ["Component afgewerkt.", "Een nieuwe ticket gekregen van een andere programmeur."], learnings: ["Component completion"] },
+      { title: "Friday", tasks: ["Ticket afgewerkt.", "In de namiddag meeting met begeleider om aan een groot project te beginnen."], learnings: ["Project planning"] }
+    ]
+  },
+  {
+    number: 4,
+    title: "Sitecore Integration",
+    description: "Learning Sitecore CMS basics, understanding content management, and implementing first integrations.",
+    dateRange: "February 24-28, 2025",
+    keyTechnologies: ["Sitecore", "Angular"],
+    achievements: ["Learned Sitecore basics", "Implemented first integrations", "Understood content management"],
+    content: `
+      <h2>Week 4 Highlights</h2>
+      <p>This week focused on integrating Sitecore CMS with the project:</p>
+    `,
+    days: [
+      { title: "Monday", tasks: ["In de voormiddag op school voor een intervisiemoment.", "Namiddag naar stageplaats om aan het Sitecore gedeelte van het project te beginnen."], learnings: ["Sitecore basics"] },
+      { title: "Tuesday", tasks: ["Verder werken aan Sitecore."], learnings: ["Sitecore development"] },
+      { title: "Wednesday", tasks: ["Verder werken aan Sitecore.", "In de middag naar evenement gaan in Antwerp Expo."], learnings: ["Event insights"] },
+      { title: "Thursday", tasks: ["PI Planning.", "Namiddag verder werken."], learnings: ["PI Planning"] },
+      { title: "Friday", tasks: ["Werken aan Sitecore."], learnings: ["Sitecore progress"] }
+    ]
+  },
+  {
+    number: 5,
+    title: "Advanced Angular Concepts",
+    description: "Working with observables, state management, and complex component interactions.",
+    dateRange: "March 3-7, 2025",
+    keyTechnologies: ["Angular", "TypeScript", "RxJS"],
+    achievements: ["Learned observables", "Implemented state management", "Handled complex interactions"],
+    content: `
+      <h2>Week 5 Highlights</h2>
+      <p>This week focused on advanced Angular concepts:</p>
+    `,
+    days: [
+      { title: "Monday", tasks: ["Nog steeds bezig aan Sitecore."], learnings: ["Sitecore progress"] },
+      { title: "Tuesday", tasks: ["Begonnen aan de Angular code."], learnings: ["Angular basics"] },
+      { title: "Wednesday", tasks: ["Was verder bezig in Angular aan de componenten."], learnings: ["Component development"] },
+      { title: "Thursday", tasks: ["Was verder bezig in Angular aan de componenten.", "Ticket van vorige week was afgekeurd, dus moest ik daaraan verder werken, dat was af en toen verder gewerkt aan de componenten."], learnings: ["Ticket resolution"] },
+      { title: "Friday", tasks: ["Componenten verder aanmaken en laten functioneren."], learnings: ["Component functionality"] }
+    ]
+  },
+  {
+    number: 6,
+    title: "Team Collaboration",
+    description: "Participating in code reviews, team meetings, and improving communication skills.",
+    dateRange: "March 10-14, 2025",
+    keyTechnologies: ["Angular", "TypeScript"],
+    achievements: ["Participated in code reviews", "Improved communication skills", "Collaborated with the team"],
+    content: `
+      <h2>Week 6 Highlights</h2>
+      <p>This week focused on team collaboration and communication:</p>
+    `,
+    days: [
+      { title: "Monday", tasks: ["Nieuwe scrum-master, beetje kennismaking gehad met het team.", "Werken aan de componenten.", "Samengezeten met mentor om alles op te zetten voor visueel te testen. Was nog niet af."], learnings: ["Scrum process"] },
+      { title: "Tuesday", tasks: ["Verder werken aan de componenten.", "Mentor was druk vandaag, geen tijd om verder te bekijken."], learnings: ["Independent work"] },
+      { title: "Wednesday", tasks: ["Werken aan de components in Angular."], learnings: ["Component development"] },
+      { title: "Thursday", tasks: ["Werken in Angular.", "Samengezeten met collega ivm met probleem dat ik met Git had. Heeft wel even geduurd."], learnings: ["Git troubleshooting"] },
+      { title: "Friday", tasks: ["Issue gefixt, nu kan ik visueel testen/zien.", "Wat er niet goed werkt, kan ik aanpassen."], learnings: ["Testing and debugging"] }
+    ]
+  },
+  {
+    number: 7,
+    title: "Project Milestones",
+    description: "Achieving key project goals, fixing critical bugs, and implementing new features.",
+    dateRange: "March 17-21, 2025",
+    keyTechnologies: ["Angular", "TypeScript"],
+    achievements: ["Achieved project goals", "Fixed critical bugs", "Implemented new features"],
+    content: `
+      <h2>Week 7 Highlights</h2>
+      <p>This week focused on achieving project milestones:</p>
+    `,
+    days: [
+      { title: "Monday", tasks: ["Verder werken aan de componenten/Sitecore implementatie.", "In de middag samen gaan eten, vanwege afscheid 2 collega's.", "Erna nog een retro meeting gehad."], learnings: ["Team collaboration"] },
+      { title: "Tuesday", tasks: ["Nu is het verder werken op de componenten met Sitecore.", "Ook een testomgeving opgezet, om visueel te zien wat ik heb."], learnings: ["Testing setup"] },
+      { title: "Wednesday", tasks: ["Verder werken aan de componenten/Sitecore."], learnings: ["Component development"] },
+      { title: "Thursday", tasks: ["Opvolging van de vorige dag."], learnings: ["Task tracking"] },
+      { title: "Friday", tasks: ["Opvolging van de vorige dagen."], learnings: ["Task completion"] }
+    ]
+  },
+  {
+    number: 8,
+    title: "Performance Optimization",
+    description: "Improving application performance, optimizing code, and enhancing user experience.",
+    dateRange: "March 24-28, 2025",
+    keyTechnologies: ["Angular", "TypeScript"],
+    achievements: ["Optimized application performance", "Improved code efficiency", "Enhanced user experience"],
+    content: `
+      <h2>Week 8 Highlights</h2>
+      <p>This week focused on performance optimization:</p>
+    `,
+    days: [
+      { title: "Monday", tasks: ["Sitecore en Angular verder geïntegreerd.", "Probleem met de testomgeving opgelost."], learnings: ["Integration troubleshooting"] },
+      { title: "Tuesday", tasks: ["Verder werken aan de optimalisatie van de applicatie.", "Code reviews gedaan."], learnings: ["Code optimization techniques"] },
+      { title: "Wednesday", tasks: ["Optimalisatie van de applicatie voortgezet.", "Voorbereidingen getroffen voor de presentatie."], learnings: ["Performance tuning"] },
+      { title: "Thursday", tasks: ["Laatste hand gelegd aan de optimalisaties.", "Feedbacksessie gehad met het team."], learnings: ["Feedback incorporation"] },
+      { title: "Friday", tasks: ["Presentatie voorbereid en geoefend.", "Eindevaluatie van de stage."], learnings: ["Presentation skills"] }
+    ]
+  },
+  {
+    number: 9,
+    title: "Documentation and Knowledge Sharing",
+    description: "Focusing on documentation, knowledge sharing, and preparing for the internship conclusion.",
+    dateRange: "March 31 - April 4, 2025",
+    keyTechnologies: ["Angular", "TypeScript"],
+    achievements: ["Improved project documentation", "Conducted knowledge sharing sessions", "Prepared for internship conclusion"],
+    content: `
+      <h2>Week 9 Highlights</h2>
+      <p>This week focused on documentation and knowledge sharing:</p>
+    `,
+    days: [
+      { title: "Monday", tasks: ["Documentatie van het project verbeterd.", "Kennisdelingssessies voorbereid."], learnings: ["Documentation best practices"] },
+      { title: "Tuesday", tasks: ["Kennisdelingssessies uitgevoerd.", "Feedback op documentatie ontvangen."], learnings: ["Knowledge sharing"] },
+      { title: "Wednesday", tasks: ["Laatste aanpassingen aan documentatie gedaan.", "Voorbereidingen getroffen voor de afsluitende presentatie."], learnings: ["Final presentation preparation"] },
+      { title: "Thursday", tasks: ["Afsluitende presentatie gegeven.", "Feedbacksessie gehad."], learnings: ["Receiving and incorporating feedback"] },
+      { title: "Friday", tasks: ["Stage geëvalueerd en feedback gegeven.", "Documentatie en code opgeleverd."], learnings: ["Project delivery"] }
+    ]
+  },
+  {
+    number: 10,
+    title: "Internship Conclusion",
+    description: "Wrapping up the internship, reflecting on experiences, and planning future steps.",
+    dateRange: "April 7-11, 2025",
+    keyTechnologies: ["Angular", "TypeScript"],
+    achievements: ["Successfully concluded the internship", "Received positive feedback", "Gained valuable industry experience"],
+    content: `
+      <h2>Internship Conclusion</h2>
+      <p>As my internship comes to an end, I reflect on the valuable experiences and skills I've gained:</p>
       <ul>
-        <li>Deepened understanding of the codebase</li>
-        <li>Started contributing to real projects</li>
-        <li>Participated in team meetings</li>
+        <li>Successfully completed all assigned projects and tasks</li>
+        <li>Gained hands-on experience in Angular, TypeScript, and Sitecore</li>
+        <li>Improved problem-solving, communication, and teamwork skills</li>
+        <li>Received positive feedback from mentors and colleagues</li>
       </ul>
+      <p>I'm grateful for the opportunity to intern at VAB and look forward to applying my skills in future endeavors.</p>
     `
+  },
+  {
+    number: 11,
+    title: "Post-Internship Reflections",
+    description: "Reflecting on the internship journey and outlining future learning goals.",
+    dateRange: "April 14-18, 2025",
+    keyTechnologies: ["Angular", "TypeScript"],
+    achievements: ["Reflected on internship experiences", "Outlined future learning goals", "Prepared for upcoming challenges"],
+    content: `
+      <h2>Post-Internship Reflections</h2>
+      <p>Reflecting on my internship journey, I recognize the significant growth and learning I've experienced:</p>
+      <ul>
+        <li>Enhanced technical skills in Angular and TypeScript</li>
+        <li>Developed a strong understanding of project workflows and collaboration</li>
+        <li>Gained confidence in problem-solving and independent work</li>
+        <li>Established valuable professional relationships</li>
+      </ul>
+      <p>Moving forward, I aim to continue building on these skills, exploring advanced Angular concepts, and deepening my knowledge of full-stack development.</p>
+    `
+  },
+  {
+    number: 12,
+    title: "Aansluitingsrecht Development",
+    description: "Focused on developing features for the Aansluitingsrecht project.",
+    dateRange: "April 22-26, 2024",
+    keyTechnologies: ["Angular", "TypeScript", ".NET", "C#"],
+    achievements: ["Progress on Aansluitingsrecht", "Backlog refinement"],
+    content: `
+      <h2>Week 12 Highlights</h2>
+      <p>This week focused on developing features for the Aansluitingsrecht project:</p>
+      <ul>
+        <li>Worked on mapping-based functionality</li>
+        <li>Participated in backlog refinement</li>
+        <li>Attended intervision at school</li>
+      </ul>
+    `,
+    days: [
+      { title: "Monday", tasks: ["Internationale Feestdag"], learnings: ["N/A"] },
+      { title: "Tuesday", tasks: ["Bezig met een functie te schrijven op basis van de mapping.", "Backlog refinement in de namiddag gehad."], learnings: ["Mapping functie", "Backlog refinement"] },
+      { title: "Wednesday", tasks: ["Voormiddag intervisiemoment op school.", "Namiddag naar kantoor gekomen."], learnings: ["Intervisie", "Kantoorwerk"] },
+      { title: "Thursday", tasks: ["Bezig met aansluitingsrecht"], learnings: ["Aansluitingsrecht"] },
+      { title: "Friday", tasks: ["Bezig met aansluitingsrecht"], learnings: ["Aansluitingsrecht"] }
+    ]
+  },
+  {
+    number: 13,
+    title: "Advanced Mapping Techniques",
+    description: "Exploring advanced mapping techniques and improving project workflows.",
+    dateRange: "April 29 - May 3, 2024",
+    keyTechnologies: ["Angular", "TypeScript", ".NET", "C#"],
+    achievements: ["Refined mapping functionality", "Sprint review and planning"],
+    content: `
+      <h2>Week 13 Highlights</h2>
+      <p>This week focused on refining mapping techniques and participating in team reviews:</p>
+      <ul>
+        <li>Worked on Aansluitingsrecht</li>
+        <li>Participated in backlog refinement and sprint review</li>
+        <li>Processed mentor feedback</li>
+      </ul>
+    `,
+    days: [
+      { title: "Monday", tasks: ["beetje bezig met aansluitingsrecht", "backlog refinement session in de voormiddag", "in de namiddag een sprint review met ons team en retro +sprint planning"], learnings: ["Backlog refinement", "Sprint review", "Retro & planning"] },
+      { title: "Tuesday", tasks: ["werken aan aansluitingsrecht en meeting met mentor."], learnings: ["Aansluitingsrecht", "Mentor feedback"] },
+      { title: "Wednesday", tasks: ["Feedback van de mentor verwerken."], learnings: ["Feedback verwerken"] },
+      { title: "Thursday", tasks: ["Feestdag, verlof"], learnings: ["N/A"] },
+      { title: "Friday", tasks: ["Kort nog gewerkt aan aansluitingsrecht, namiddag verlof genomen."], learnings: ["Aansluitingsrecht"] }
+    ]
+  },
+  {
+    number: 14,
+    title: "Internship Wrap-up",
+    description: "Finalizing projects, preparing documentation, and reflecting on the internship experience.",
+    dateRange: "May 6-10, 2024",
+    keyTechnologies: ["Angular", "TypeScript", "MySQL"],
+    achievements: ["Completed final projects", "Prepared documentation", "Received internship completion certificate"],
+    content: `
+      <h2>Internship Wrap-up</h2>
+      <p>As my internship concludes, I reflect on the valuable experiences and skills I've gained:</p>
+      <ul>
+        <li>Successfully completed all assigned projects and tasks</li>
+        <li>Gained hands-on experience in Angular, TypeScript, and MySQL</li>
+        <li>Improved problem-solving, communication, and teamwork skills</li>
+        <li>Received positive feedback from mentors and colleagues</li>
+      </ul>
+      <p>I'm grateful for the opportunity to intern at VAB and look forward to applying my skills in future endeavors.</p>
+    `,
+    days: [
+      { title: "Monday", tasks: ["Werken aan aansluitingsrecht, backlog refinement.", "In de namiddag samengezeten met mentor, had een paar vragen.", "Deel 1 zo goed als af."], learnings: ["Aansluitingsrecht", "Backlog refinement", "Mentor overleg"] },
+      { title: "Tuesday", tasks: ["Hoxhunt training gedaan.", "Werken aan het 2e deel van het ticketje.", "Na de daily stand-up samen gezeten met een collega die me alles omtrent documentatie heeft uitgelegd.", "Begonnen aan documentatie voor aansluitingsrecht, bijna af."], learnings: ["Hoxhunt", "Documentatie"] },
+      { title: "Wednesday", tasks: ["Doucmentatie afgewerkt.", "Verder nog wat aan aansluitingsrecht gewerkt."], learnings: ["Documentatie", "Aansluitingsrecht"] },
+      { title: "Thursday", tasks: ["Wat aan aansluitingsrecht werken.", "Meeting met mentor in verband met unit tests.", "Opstart voor unit tests gedaan."], learnings: ["Unit tests opstart"] },
+      { title: "Friday", tasks: ["Bezig met schrijven van de unit tests"], learnings: ["Unit tests"] }
+    ]
   },
   {
     number: 15,
@@ -111,539 +384,54 @@ const weeks: WeekData[] = [
         <li>Presented my work to the team</li>
         <li>Received feedback and future recommendations</li>
       </ul>
-    `
-  }
-]
-
-// Generate the middle weeks automatically
-for (let i = 3; i <= 14; i++) {
-  // Start with February 17 (week 3's start)
-  const startDate = new Date(2025, 1, 17); // Month is 0-based, so 1 is February
-  startDate.setDate(startDate.getDate() + ((i-3) * 7)); // Add weeks
-  
-  const endDate = new Date(startDate);
-  endDate.setDate(endDate.getDate() + 4); // Add 4 days to get to Friday
-
-  const formatDateRange = (start: Date, end: Date) => {
-    const startMonth = start.toLocaleString('default', { month: 'long' });
-    const endMonth = end.toLocaleString('default', { month: 'long' });
-    
-    if (startMonth === endMonth) {
-      return `${startMonth} ${start.getDate()}-${end.getDate()}, 2025`;
-    } else {
-      return `${startMonth} ${start.getDate()} - ${endMonth} ${end.getDate()}, 2025`;
-    }
-  };
-
-  weeks.splice(i, 0, {
-    number: i,
-    title: `Week ${i}`,
-    description: `Week ${i} of my internship journey.`,
-    dateRange: formatDateRange(startDate, endDate),
-    keyTechnologies: ["Angular", "TypeScript", "MySQL"],
-    achievements: ["Ongoing project work", "Learning new technologies", "Team collaboration"],
+    `,
+    days: [
+      { title: "Monday", tasks: ["Unit tests verder schrijven.", "Backlog refinements.", "Namiddag:", "-Sprint review", "-Retro / Sprint Planning", "Nog wat tijd voor unit tests"], learnings: ["Unit tests", "Sprint review", "Retro", "Planning"] },
+      { title: "Tuesday", tasks: ["Unit tests"], learnings: ["Unit tests"] },
+      { title: "Wednesday", tasks: ["Unit tests"], learnings: ["Unit tests"] },
+      { title: "Thursday", tasks: ["Unit tests"], learnings: ["Unit tests"] },
+      { title: "Friday", tasks: ["Nog wat unit tests schrijven."], learnings: ["Unit tests"] }
+    ]
+  },
+  {
+    number: 16,
+    title: "Post-Internship Planning",
+    description: "Planning next steps and setting goals for the future.",
+    dateRange: "May 20-24, 2024",
+    keyTechnologies: [],
+    achievements: [],
     content: `
-      <div class="flex flex-col md:flex-row gap-8 mb-8">
-        <div class="md:w-1/2">
-          <h2 class="text-xl font-semibold mb-4">This week's focus and achievements:</h2>
-          <ul class="space-y-2">
-            <li>Continued working on ongoing projects</li>
-            <li>Learned new technologies and methodologies</li>
-            <li>Collaborated with team members on various tasks</li>
-          </ul>
-        </div>
-        
-        <div class="md:w-1/2">
-          <h2 class="text-xl font-semibold mb-4">Key learnings and observations:</h2>
-          <ul class="space-y-2">
-            <li>Technical skills improved in specific areas</li>
-            <li>Better understanding of development processes</li>
-            <li>Enhanced communication with team members</li>
-          </ul>
-        </div>
-      </div>
-    `
-  })
-}
-
-// Update the content for weeks 1-15
-const weekDays = {
-  number: 1,
-  days: [
-    {
-      title: "Monday",
-      tasks: [
-        "Team introduction and office tour",
-        "Received work laptop and domain access",
-        "Set up development environment",
-        "Attended 2 team meetings",
-        "Completed Hoxhunt cyber security training"
-      ],
-      learnings: [
-        "Company environment and team structure",
-        "Security protocols and best practices",
-        "Team bonding (Lunch with ICT team at McDonald's)"
-      ]
-    },
-    {
-      title: "Tuesday",
-      tasks: [
-        "Explored VAB's Angular project",
-        "Started phone number form component with country flags",
-        "Set up VAB backend environment",
-        "Worked on assigned ticket from colleague",
-        "Resolved Git push issues"
-      ],
-      learnings: [
-        "Project structure and workflow",
-        "Sprint planning process",
-        "Git troubleshooting",
-        "Security importance (laptop incident)"
-      ]
-    },
-    {
-      title: "Wednesday",
-      tasks: [
-        "Fixed local dev.vab.be access issue",
-        "Completed assigned ticket",
-        "Studied RxJS fundamentals",
-        "Watched tutorial videos on RxJS"
-      ],
-      learnings: [
-        "Local development environment troubleshooting",
-        "RxJS concepts and implementation",
-        "Ticket completion workflow"
-      ]
-    },
-    {
-      title: "Thursday",
-      tasks: [
-        "Researched Sitecore fields and templates",
-        "Observed cross-team project meeting",
-        "Created Sitecore fields for phone number component",
-        "Completed backend setup for component",
-        "Started frontend preparation"
-      ],
-      learnings: [
-        "Sitecore CMS basics",
-        "Component development workflow",
-        "Backend-frontend integration process"
-      ]
-    },
-    {
-      title: "Friday",
-      tasks: [
-        "Weekly review",
-        "Documentation",
-        "Planning next week"
-      ],
-      learnings: [
-        "Week reflections",
-        "Areas for improvement"
-      ]
-    }
-  ]
-}
-
-// After the weekDays definition, add specific content for week 2
-const week2Days = {
-  number: 2,
-  days: weekDays.days.map(day => ({
-    ...day,
-    tasks: day.title === "Friday" ? [
-      "Added additional requirements",
-      "Found and documented a bug (to be fixed next week)",
-      "Weekly review",
-      "Documentation"
-    ] : day.tasks,
-    learnings: day.title === "Friday" ? [
-      "Bug identification and documentation",
-      "Week reflections"
-    ] : day.learnings
-  }))
-}
-
-// Add week 3 specific content
-const week3Days = {
-  number: 3,
-  days: [
-    {
-      title: "Monday",
-      tasks: [
-        "Investigated reported bug",
-        "Fixed initial bug issues",
-        "Added custom drop-down implementation",
-        "Encountered and documented new bugs"
-      ],
-      learnings: [
-        "Bug investigation process",
-        "Custom dropdown development",
-        "Issue tracking and documentation"
-      ]
-    },
-    {
-      title: "Tuesday",
-      tasks: [
-        "Continued bug fixes",
-        "Completed component development",
-        "Prepared component for mentor review"
-      ],
-      learnings: [
-        "Component optimization",
-        "Code review preparation",
-        "Bug resolution strategies"
-      ]
-    },
-    {
-      title: "Wednesday",
-      tasks: [
-        "Code formatting and optimization",
-        "Added extra Sitecore field",
-        "Implemented backend changes",
-        "Integrated new field in frontend"
-      ],
-      learnings: [
-        "Code optimization techniques",
-        "Full-stack integration process",
-        "Sitecore field management"
-      ]
-    },
-    {
-      title: "Thursday",
-      tasks: [
-        "Finalized component development",
-        "Component review and approval",
-        "Started new ticket from colleague"
-      ],
-      learnings: [
-        "Component completion process",
-        "Cross-team collaboration",
-        "Task transition management"
-      ]
-    },
-    {
-      title: "Friday",
-      tasks: [
-        "Completed assigned ticket",
-        "Met with mentor about new major project",
-        "Project planning and discussion"
-      ],
-      learnings: [
-        "Project planning",
-        "Mentor collaboration",
-        "Long-term project preparation"
-      ]
-    }
-  ]
-}
-
-// Add week 4 specific content
-const week4Days = {
-  number: 4,
-  days: [
-    {
-      title: "Monday",
-      tasks: [
-        "Morning: School intervision moment",
-        "Afternoon: Started Sitecore project section",
-        "Created initial layout",
-        "Started placeholder settings implementation"
-      ],
-      learnings: [
-        "School-work balance management",
-        "Sitecore layout fundamentals",
-        "Placeholder settings basics"
-      ]
-    },
-    {
-      title: "Tuesday",
-      tasks: [
-        "Completed placeholder settings",
-        "Started creating renderings",
-        "Project structure optimization"
-      ],
-      learnings: [
-        "Sitecore rendering creation",
-        "Placeholder settings configuration"
-      ]
-    },
-    {
-      title: "Wednesday",
-      tasks: [
-        "Continued Sitecore development",
-        "Attended event at Antwerp Expo",
-        "Documentation update"
-      ],
-      learnings: [
-        "Sitecore development basics"
-      ]
-    },
-    {
-      title: "Thursday",
-      tasks: [
-        "Attended PI Planning",
-        "Started template development",
-        "Afternoon development session"
-      ],
-      learnings: [
-        "PI Planning process",
-        "Template development basics"
-      ]
-    },
-    {
-      title: "Friday",
-      tasks: [
-        "Continued Sitecore development",
-        "Advanced template work",
-        "Template structure refinement"
-      ],
-      learnings: [
-        "Template development techniques"
-      ]
-    }
-  ]
-}
-
-// Update week 5's content
-const week5Days = {
-  number: 5,
-  days: [
-    {
-      title: "Monday",
-      tasks: [
-        "Continued Sitecore development",
-        "Finalized all Sitecore configurations"
-      ],
-      learnings: [
-        "Sitecore configuration completion"
-      ]
-    },
-    {
-      title: "Tuesday",
-      tasks: [
-        "Sitecore review with mentor",
-        "Started Angular component development",
-        "Component architecture planning"
-      ],
-      learnings: [
-        "Mentor feedback implementation",
-        "Angular component structure"
-      ]
-    },
-    {
-      title: "Wednesday",
-      tasks: [
-        "Continued Angular component development",
-        "Worked on previously rejected ticket"
-      ],
-      learnings: [
-        "Component development process",
-        "Handling feedback and revisions"
-      ]
-    },
-    {
-      title: "Thursday",
-      tasks: [
-        "Component creation and functionality implementation",
-        "Testing and debugging"
-      ],
-      learnings: [
-        "Angular component functionality",
-        "Testing procedures"
-      ]
-    },
-    {
-      title: "Friday",
-      tasks: [
-        "Continued component development",
-        "Component functionality implementation"
-      ],
-      learnings: [
-        "Component integration",
-        "Angular development practices"
-      ]
-    }
-  ]
-}
-
-// Update week 6's content - modify Friday
-const week6Days = {
-  number: 6,
-  days: [
-    {
-      title: "Monday",
-      tasks: [
-        "Met new Scrum Master",
-        "Team introduction session",
-        "Component development",
-        "Visual testing setup with mentor (ongoing)"
-      ],
-      learnings: [
-        "Team dynamics",
-        "Visual testing preparation"
-      ]
-    },
-    {
-      title: "Tuesday",
-      tasks: [
-        "Continued component development",
-        "Independent work (mentor unavailable)"
-      ],
-      learnings: [
-        "Independent problem-solving",
-        "Component development progress"
-      ]
-    },
-    {
-      title: "Wednesday",
-      tasks: [
-        "Angular component development",
-        "Component implementation"
-      ],
-      learnings: [
-        "Angular development techniques",
-        "Component structure"
-      ]
-    },
-    {
-      title: "Thursday",
-      tasks: [
-        "Angular development continuation",
-        "Git issue resolution with colleague",
-        "Extended Git troubleshooting session"
-      ],
-      learnings: [
-        "Git problem-solving",
-        "Team collaboration",
-        "Version control management"
-      ]
-    },
-    {
-      title: "Friday",
-      tasks: [
-        "Set up visual testing environment",
-        "Component testing and adjustments"
-      ],
-      learnings: [
-        "Visual implementation"
-      ]
-    }
-  ]
-}
-
-// Update week 7's content - modify Tuesday
-const week7Days = {
-  number: 7,
-  days: [
-    {
-      title: "Monday",
-      tasks: [
-        "Component and Sitecore implementation work",
-        "Team lunch (Farewell to colleagues)",
-        "Attended retrospective meeting"
-      ],
-      learnings: [
-        "Team dynamics",
-        "Sprint retrospective process"
-      ]
-    },
-    {
-      title: "Tuesday",
-      tasks: [
-        "Component development with Sitecore",
-        "Set up test environment"
-      ],
-      learnings: [
-        "Test environment setup",
-        "Visual testing procedures"
-      ]
-    },
-    {
-      title: "Wednesday",
-      tasks: [
-        "Continued component development",
-        "Sitecore integration work"
-      ],
-      learnings: [
-        "Component integration",
-        "Sitecore development"
-      ]
-    },
-    {
-      title: "Thursday",
-      tasks: [
-        "Follow-up on previous day's work",
-        "Component refinements"
-      ],
-      learnings: [
-        "Component optimization",
-        "Development continuity"
-      ]
-    },
-    {
-      title: "Friday",
-      tasks: [
-        "Continued development from previous days",
-        "Project progress review"
-      ],
-      learnings: [
-        "Progress tracking",
-        "Development iteration"
-      ]
-    }
-  ]
-}
-
-// Add week 8's content
-const week8Days = {
-  number: 8,
-  days: [
-    {
-      title: "Monday",
-      tasks: [
-        "Website component development",
-        "Layout improvements",
-        "Evaluation meeting with mentor",
-        "Progress review"
-      ],
-      learnings: [
-        "Mentor feedback",
-        "Website layout optimization"
-      ]
-    },
-    {
-      title: "Tuesday",
-      tasks: [
-        "Component development continuation",
-        "Website styling improvements",
-        "Bug fixes and problem solving"
-      ],
-      learnings: [
-        "Bug resolution",
-        "Component styling"
-      ]
-    }
-  ]
-}
-
-// Update the weeks array to include week 7 and 8 content
-for (let i = 1; i <= 14; i++) {
-  weeks[i] = {
-    ...weeks[i],
-    days: i === 2 ? week2Days.days : 
-          i === 3 ? week3Days.days :
-          i === 4 ? week4Days.days :
-          i === 5 ? week5Days.days :
-          i === 6 ? week6Days.days :
-          i === 7 ? week7Days.days :
-          i === 8 ? week8Days.days :
-          weekDays.days.map(day => ({
-            ...day,
-            tasks: day.tasks,
-            learnings: day.learnings
-          }))
+      <h2>Post-Internship Planning</h2>
+      <p>Planning next steps and setting goals for the future.</p>
+    `,
+    days: [
+      { title: "Monday", tasks: ["Nog bezig met unit tests, niets anders waar ik voorlopig aan moet werken. Voor de rest nog een Inspect & Adapt gehad."], learnings: ["Unit tests", "Inspect & Adapt"] },
+      { title: "Tuesday", tasks: ["Werken aan unit tests"], learnings: ["Unit tests"] },
+      { title: "Wednesday", tasks: ["Vrij genomen"], learnings: ["N/A"] },
+      { title: "Thursday", tasks: ["PI Planning"], learnings: ["PI Planning"] },
+      { title: "Friday", tasks: ["Laatste dag, nog de laatste unit tests geschreven. En een meeting met mijn mentor gehad ivm de afronding van de stage."], learnings: ["Unit tests", "Stage afronding"] }
+    ]
+  },
+  {
+    number: 17,
+    title: "Looking Ahead",
+    description: "Reflecting on the internship and preparing for upcoming challenges.",
+    dateRange: "May 27-31, 2024",
+    keyTechnologies: [],
+    achievements: [],
+    content: `
+      <h2>Looking Ahead</h2>
+      <p>Reflecting on the internship and preparing for upcoming challenges.</p>
+    `,
+    days: [
+      { title: "Monday", tasks: ["Vrij genomen"], learnings: ["N/A"] },
+      { title: "Tuesday", tasks: ["Vrij genomen"], learnings: ["N/A"] },
+      { title: "Wednesday", tasks: ["Vrij genomen"], learnings: ["N/A"] },
+      { title: "Thursday", tasks: ["Vrij genomen"], learnings: ["N/A"] },
+      { title: "Friday", tasks: ["Vrij genomen"], learnings: ["N/A"] }
+    ]
   }
-}
+];
 
 export default function WeekPage({ params }: { params: { id: string } }) {
   const weekNumber = parseInt(params.id)
@@ -669,68 +457,15 @@ export default function WeekPage({ params }: { params: { id: string } }) {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-4 sm:gap-8">
-          {/* Main Content */}
           <div className={`${week.number === 0 ? 'lg:w-2/3' : 'w-full'} bg-[#1e2432] rounded-lg shadow-md p-4 sm:p-8 hover:shadow-lg transition-shadow duration-300 animate-slideUp`}>
             <div 
               className="prose prose-invert max-w-none prose-headings:text-white prose-p:text-gray-400 prose-li:text-gray-400 prose-strong:text-white prose-sm sm:prose-base [&_ul]:list-none [&_ul]:pl-0"
               dangerouslySetInnerHTML={{ __html: week.content }}
             />
-            {week.number > 0 && week.days && (
-              <WeekDays days={week.days} />
-            )}
+            {week.days && <WeekDays days={week.days} />}
           </div>
-
-          {/* Sidebar only for Week 0 */}
-          {week.number === 0 && (
-            <div className="lg:w-1/3 space-y-4 sm:space-y-6">
-              {/* Technologies Used */}
-              <div className="bg-[#1e2432] rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                <h2 className="text-2xl font-semibold mb-4 text-white">Technologies Used</h2>
-                <div className="flex flex-wrap gap-2">
-                  {week.keyTechnologies.map((tech) => (
-                    <span 
-                      key={tech}
-                      className="px-3 py-1 bg-blue-600 text-white rounded-full text-sm"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Key Achievements */}
-              <div className="bg-[#1e2432] rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                <h2 className="text-2xl font-semibold mb-4 text-white">Key Achievements</h2>
-                <ul className="space-y-3">
-                  {week.achievements.map((achievement, index) => (
-                    <li key={index} className="flex items-center gap-2 text-gray-400">
-                      <svg className="w-5 h-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      {achievement}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Progress */}
-              <div className="bg-[#1e2432] rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                <h2 className="text-2xl font-semibold mb-4 text-white">Progress</h2>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-gray-400">
-                    <span>Completion:</span>
-                    <span>100%</span>
-                  </div>
-                  <div className="w-full bg-[#252b3b] rounded-full h-2">
-                    <div className="bg-blue-600 h-2 rounded-full w-full"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
 
-        {/* Navigation */}
         <div className="mt-6 sm:mt-8 flex justify-between text-sm sm:text-base">
           {week.number > 0 && (
             <Link
@@ -752,4 +487,4 @@ export default function WeekPage({ params }: { params: { id: string } }) {
       </div>
     </main>
   )
-} 
+}

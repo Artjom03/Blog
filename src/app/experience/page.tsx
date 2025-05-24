@@ -58,29 +58,6 @@ export default function Experience() {
     }
   ]
 
-  const quickStats = [
-    {
-      label: "Weeks Completed",
-      value: "4+",
-      icon: "📅"
-    },
-    {
-      label: "Projects Contributed",
-      value: "3",
-      icon: "💻"
-    },
-    {
-      label: "Pull Requests",
-      value: "15+",
-      icon: "🔄"
-    },
-    {
-      label: "Documentation Pages",
-      value: "5",
-      icon: "📝"
-    }
-  ]
-
   return (
     <main className="min-h-screen p-8 animate-fadeIn">
       <div className="max-w-7xl mx-auto">
@@ -149,20 +126,6 @@ export default function Experience() {
 
           {/* Right Column - Stats and Skills */}
           <div className="lg:w-1/3 lg:pt-16">
-            {/* Quick Stats */}
-            <section className="bg-[#1e2432] rounded-lg p-6 mb-8">
-              <h2 className="text-2xl font-semibold text-white mb-6">Quick Stats</h2>
-              <div className="grid grid-cols-2 gap-4">
-                {quickStats.map((stat, index) => (
-                  <div key={index} className="text-center">
-                    <div className="text-2xl mb-1">{stat.icon}</div>
-                    <div className="text-xl font-bold text-white mb-1">{stat.value}</div>
-                    <div className="text-sm text-gray-400">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
             {/* Skills Gained */}
             <section className="bg-[#1e2432] rounded-lg p-6">
               <h2 className="text-2xl font-semibold text-white mb-6">Skills Gained</h2>
@@ -189,4 +152,4 @@ export default function Experience() {
       </div>
     </main>
   )
-} 
+}
