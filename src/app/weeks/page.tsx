@@ -124,7 +124,7 @@ export default function WeeklyReports() {
     },
     {
       week: 15,
-      title: "Final Week",
+      title: "Week 15 Highlights",
       description: "Wrapping up the internship experience and reflecting on the journey.",
       date: "May 13-17, 2024",
       tags: ['reflection', 'lessons-learned']

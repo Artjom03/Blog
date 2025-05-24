@@ -371,7 +371,7 @@ const weeks: WeekData[] = [
   },
   {
     number: 15,
-    title: "Final Week",
+    title: "Unit Testing & Sprint Review",
     description: "Wrapping up the internship experience.",
     dateRange: "April 29 - May 3, 2024",
     keyTechnologies: ["Angular", "TypeScript", "MySQL"],
