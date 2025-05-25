@@ -583,8 +583,29 @@ export default function WeekPage({ params }: { params: { id: string } }) {
   }
 
   return (
-    <main className="min-h-screen p-4 sm:p-8 animate-fadeIn">
+    <main className="min-h-screen p-4 sm:p-8 animate-fadeIn bg-gradient-to-br from-[#1e2432] via-[#23293a] to-[#2d3548]">
       <div className="max-w-7xl mx-auto">
+        {/* Add a colorful accent bar */}
+        <div className="h-2 w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded mb-8"></div>
+
+        {/* Week Quick Navigation */}
+        <div className="flex flex-wrap gap-2 justify-center mb-8">
+          {weeks.map(w => (
+            <Link
+              key={w.number}
+              href={`/weeks/${w.number}`}
+              className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
+                w.number === weekNumber
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-[#23293a] text-gray-300 hover:bg-blue-700 hover:text-white'
+              }`}
+              title={w.title}
+            >
+              {w.number === 0 ? '0' : w.number}
+            </Link>
+          ))}
+        </div>
+
         <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start mb-6 sm:mb-8">
           <div className="text-center sm:text-left mb-4 sm:mb-0">
             <h1 className="text-3xl sm:text-4xl font-bold text-white animate-slideDown hover:scale-105 transition-transform duration-300">
@@ -597,14 +618,23 @@ export default function WeekPage({ params }: { params: { id: string } }) {
           </span>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-4 sm:gap-8">
-          <div className={`${week.number === 0 ? 'lg:w-2/3' : 'w-full'} bg-[#1e2432] rounded-lg shadow-md p-4 sm:p-8 hover:shadow-lg transition-shadow duration-300 animate-slideUp`}>
-            <div 
-              className="prose prose-invert max-w-none prose-headings:text-white prose-p:text-gray-400 prose-li:text-gray-400 prose-strong:text-white prose-sm sm:prose-base [&_ul]:list-none [&_ul]:pl-0"
-              dangerouslySetInnerHTML={{ __html: week.content }}
-            />
-            {week.days && <WeekDays days={week.days} />}
-          </div>
+        <div className="flex flex-col lg:flex-row gap-4 sm:gap-8 items-center">
+          {week.number === 0 ? (
+            <div className="w-full max-w-3xl bg-[#1e2432] rounded-lg shadow-md p-8 mx-auto flex flex-col items-center justify-center hover:shadow-lg transition-shadow duration-300 animate-slideUp">
+              <div
+                className="prose prose-invert max-w-none prose-headings:text-white prose-p:text-gray-400 prose-li:text-gray-400 prose-strong:text-white prose-sm sm:prose-base [&_ul]:list-none [&_ul]:pl-0 text-center"
+                dangerouslySetInnerHTML={{ __html: week.content }}
+              />
+            </div>
+          ) : (
+            <div className={`${week.number === 0 ? 'lg:w-2/3' : 'w-full'} bg-[#1e2432] rounded-lg shadow-md p-4 sm:p-8 hover:shadow-lg transition-shadow duration-300 animate-slideUp`}>
+              <div
+                className="prose prose-invert max-w-none prose-headings:text-white prose-p:text-gray-400 prose-li:text-gray-400 prose-strong:text-white prose-sm sm:prose-base [&_ul]:list-none [&_ul]:pl-0"
+                dangerouslySetInnerHTML={{ __html: week.content }}
+              />
+              {week.days && <WeekDays days={week.days} />}
+            </div>
+          )}
         </div>
 
         <div className="mt-6 sm:mt-8 flex justify-between text-sm sm:text-base">

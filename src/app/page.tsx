@@ -2,11 +2,13 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <main className="min-h-screen p-8 animate-fadeIn">
+    <main className="min-h-screen p-8 animate-fadeIn bg-gradient-to-br from-[#1e2432] via-[#23293a] to-[#2d3548]">
       <div className="max-w-7xl mx-auto space-y-8">
+        {/* Add a colorful accent bar */}
+        <div className="h-2 w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded mb-8"></div>
         {/* Hero Section */}
-        <div className="bg-[#1e2432] rounded-lg p-8 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 animate-slideDown">
+        <div className="bg-gradient-to-br from-blue-900/60 via-[#1e2432] to-purple-900/60 rounded-lg p-8 text-center shadow-lg border border-blue-900/20">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 animate-slideDown drop-shadow">
             Welcome to My Internship Journey
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
@@ -16,13 +18,13 @@ export default function Home() {
           <div className="flex gap-4 justify-center">
             <Link
               href="/about"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors"
+              className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-3 rounded-lg transition-colors shadow"
             >
               About Me
             </Link>
             <Link
               href="/weeks"
-              className="bg-[#252b3b] hover:bg-[#2a3141] text-white px-6 py-3 rounded-lg transition-colors"
+              className="bg-gradient-to-r from-pink-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 text-white px-6 py-3 rounded-lg transition-colors shadow"
             >
               View Weekly Reports
             </Link>
@@ -30,7 +32,7 @@ export default function Home() {
         </div>
 
         {/* Latest Blog Post */}
-        <div className="bg-[#1e2432] rounded-lg p-8">
+        <div className="bg-gradient-to-br from-purple-900/60 via-[#1e2432] to-blue-900/60 rounded-lg p-8 shadow-lg border border-purple-900/20">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-bold text-white">Latest Update</h2>
             <Link 
@@ -65,7 +67,7 @@ export default function Home() {
 
         {/* Quick Overview */}
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-[#1e2432] rounded-lg p-6">
+          <div className="bg-gradient-to-br from-blue-900/60 via-[#1e2432] to-purple-900/60 rounded-lg p-6 shadow-lg border border-blue-900/20">
             <h3 className="text-lg font-semibold text-white mb-4">About the Internship</h3>
             <p className="text-gray-300 mb-4">
               A 15-week journey at VAB, focusing on Angular development and Sitecore implementation.
@@ -78,7 +80,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="bg-[#1e2432] rounded-lg p-6">
+          <div className="bg-gradient-to-br from-pink-900/60 via-[#1e2432] to-blue-900/60 rounded-lg p-6 shadow-lg border border-pink-900/20">
             <h3 className="text-lg font-semibold text-white mb-4">Weekly Progress</h3>
             <p className="text-gray-300 mb-4">
               Detailed weekly reports covering tasks, learnings, and achievements.
@@ -91,7 +93,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="bg-[#1e2432] rounded-lg p-6">
+          <div className="bg-gradient-to-br from-purple-900/60 via-[#1e2432] to-pink-900/60 rounded-lg p-6 shadow-lg border border-purple-900/20">
             <h3 className="text-lg font-semibold text-white mb-4">Blog & Tutorials</h3>
             <p className="text-gray-300 mb-4">
               Technical insights, coding challenges, and solutions discovered during the internship.

@@ -59,10 +59,13 @@ export default function Experience() {
   ]
 
   return (
-    <main className="min-h-screen p-8 animate-fadeIn">
+    <main className="min-h-screen p-8 animate-fadeIn bg-gradient-to-br from-[#1e2432] via-[#23293a] to-[#2d3548]">
       <div className="max-w-7xl mx-auto">
+        {/* Add a colorful accent bar */}
+        <div className="h-2 w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded mb-8"></div>
+
         <header className="mb-12">
-          <h1 className="text-4xl font-bold text-white mb-4 animate-slideDown">
+          <h1 className="text-4xl font-bold text-white mb-4 animate-slideDown drop-shadow">
             My Internship Experience
           </h1>
           <p className="text-gray-300 text-lg">
@@ -75,7 +78,7 @@ export default function Experience() {
           <section className="lg:w-2/3 space-y-6">
             <h2 className="text-2xl font-semibold text-white mb-8">Journey Timeline</h2>
             {phases.map((phase, index) => (
-              <div key={index} className="bg-[#1e2432] rounded-lg p-6">
+              <div key={index} className="bg-gradient-to-br from-blue-900/60 via-[#1e2432] to-purple-900/60 rounded-lg p-6 shadow-lg border border-blue-900/20">
                 <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
                   <span className="px-3 py-1 bg-blue-600 text-white text-sm rounded-full">
                     {phase.period}
@@ -111,7 +114,7 @@ export default function Experience() {
             ))}
 
             {/* Key Takeaways - Moved inside timeline column */}
-            <section className="bg-[#1e2432] rounded-lg p-6">
+            <section className="bg-gradient-to-br from-pink-900/60 via-[#1e2432] to-blue-900/60 rounded-lg p-6 shadow-lg border border-pink-900/20">
               <h2 className="text-2xl font-semibold text-white mb-6">Key Takeaways</h2>
               <div className="space-y-4">
                 <p className="text-gray-300">
@@ -127,7 +130,7 @@ export default function Experience() {
           {/* Right Column - Stats and Skills */}
           <div className="lg:w-1/3 lg:pt-16">
             {/* Skills Gained */}
-            <section className="bg-[#1e2432] rounded-lg p-6">
+            <section className="bg-gradient-to-br from-blue-900/60 via-[#1e2432] to-purple-900/60 rounded-lg p-6 shadow-lg border border-blue-900/20">
               <h2 className="text-2xl font-semibold text-white mb-6">Skills Gained</h2>
               <div className="space-y-6">
                 {skills.map((skillSet, index) => (

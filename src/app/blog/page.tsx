@@ -46,10 +46,13 @@ export default function Blog() {
     : posts.filter(post => post.category === selectedCategory)
 
   return (
-    <main className="min-h-screen p-8 animate-fadeIn">
+    <main className="min-h-screen p-8 animate-fadeIn bg-gradient-to-br from-[#1e2432] via-[#23293a] to-[#2d3548]">
       <div className="max-w-7xl mx-auto">
+        {/* Add a colorful accent bar */}
+        <div className="h-2 w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded mb-8"></div>
+
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-          <h1 className="text-4xl font-bold text-white animate-slideDown mb-4 md:mb-0">
+          <h1 className="text-4xl font-bold text-white animate-slideDown mb-4 md:mb-0 drop-shadow">
             Blog & Tutorials
           </h1>
 
@@ -95,7 +98,9 @@ export default function Blog() {
               href={`/blog/${post.id}`}
               className="block"
             >
-              <article className="p-6 bg-[#1e2432] rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <article className="p-6 bg-gradient-to-br from-blue-900/60 via-[#1e2432] to-purple-900/60 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-blue-900/20 relative overflow-hidden group">
+                {/* Decorative gradient circle */}
+                <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 opacity-20 rounded-full blur-2xl pointer-events-none group-hover:opacity-40 transition-opacity"></div>
                 <div className="flex flex-col h-full">
                   <div className="flex justify-between items-start mb-4">
                     <span className={`px-3 py-1 rounded-full text-sm ${
@@ -127,4 +132,4 @@ export default function Blog() {
       </div>
     </main>
   )
-} 
+}

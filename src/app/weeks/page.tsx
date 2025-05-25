@@ -162,11 +162,16 @@ export default function WeeklyReports() {
     })
 
   return (
-    <main className="min-h-screen p-8 animate-fadeIn">
+    <main className="min-h-screen p-8 animate-fadeIn bg-gradient-to-br from-[#1e2432] via-[#23293a] to-[#2d3548]">
       <div className="max-w-7xl mx-auto">
+        {/* Add a colorful accent bar */}
+        <div className="h-2 w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded mb-8"></div>
+
         {/* Header with Search */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
-          <h1 className="text-4xl font-bold text-white">Weekly Reports</h1>
+          <h1 className="text-4xl font-bold text-white drop-shadow animate-slideDown mb-2 md:mb-0">
+            Weekly Reports
+          </h1>
           
           {/* Search Bar */}
           <div className="relative w-full md:w-96">
@@ -189,9 +194,9 @@ export default function WeeklyReports() {
               <button
                 key={tag}
                 onClick={() => setSelectedTag(tag)}
-                className={`px-4 py-2 rounded-lg transition-colors ${
+                className={`px-4 py-2 rounded-lg transition-colors shadow ${
                   selectedTag === tag
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white'
                     : 'bg-[#1e2432] text-gray-300 hover:bg-[#252b3b]'
                 }`}
               >
@@ -211,14 +216,16 @@ export default function WeeklyReports() {
         )}
 
         {/* Reports Grid */}
-        <div className="grid gap-6">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {filteredReports.map((report) => (
             <Link 
               key={report.week}
               href={`/weeks/${report.week}`}
               className="block"
             >
-              <article className="bg-[#1e2432] rounded-lg p-6 hover:transform hover:-translate-y-1 transition-all duration-300">
+              <article className="bg-[#23293a] rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow border border-blue-900/20 hover:border-blue-500/40 relative overflow-hidden group">
+                {/* Decorative gradient circle */}
+                <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 opacity-20 rounded-full blur-2xl pointer-events-none group-hover:opacity-40 transition-opacity"></div>
                 <div className="flex justify-between items-start mb-4">
                   <h2 className="text-2xl font-semibold text-white">
                     Week {report.week}: {report.title}
@@ -230,7 +237,7 @@ export default function WeeklyReports() {
                   {report.tags.map(tag => (
                     <span
                       key={tag}
-                      className={`px-3 py-1 rounded-full text-sm ${
+                      className={`px-3 py-1 rounded-full text-sm font-medium ${
                         tag === 'all' ? '' : {
                           'teambuilding': 'bg-purple-500/20 text-purple-400',
                           'code': 'bg-blue-500/20 text-blue-400',
