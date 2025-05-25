@@ -574,8 +574,8 @@ const weeks: WeekData[] = [
   }
 ];
 
-export default function WeekPage({ params }: { params: { id: string } }) {
-  const weekNumber = parseInt(params.id)
+export default function WeekPage(props: { params: { id: string } }) {
+  const weekNumber = parseInt(props.params.id)
   const week = weeks.find(w => w.number === weekNumber)
 
   if (!week) {
