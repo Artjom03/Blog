@@ -117,28 +117,28 @@ export default function WeeklyReports() {
     },
     {
       week: 14,
-      title: "Finalizing Features",
+      title: "Documentation & Handover",
       description: "Finalizing key features and preparing for project handoff.",
       date: "May 6-10, 2024",
       tags: ['code', 'wins']
     },
     {
       week: 15,
-      title: "Week 15 Highlights",
+      title: "Unit Testing & Sprint Review",
       description: "Wrapping up the internship experience and reflecting on the journey.",
       date: "May 13-17, 2024",
       tags: ['reflection', 'lessons-learned']
     },
     {
       week: 16,
-      title: "Post-Internship Planning",
+      title: "Inspect & Adapt / PI Planning",
       description: "Planning next steps and setting goals for the future.",
       date: "May 20-24, 2024",
       tags: ['reflection', 'goals']
     },
     {
       week: 17,
-      title: "Looking Ahead",
+      title: "Final Week Off",
       description: "Reflecting on the internship and preparing for upcoming challenges.",
       date: "May 27-31, 2024",
       tags: ['reflection', 'goals']
