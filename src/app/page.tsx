@@ -1,9 +1,10 @@
 import Link from 'next/link'
+import MobileNavDropdown from "@/app/components/MobileNavDropdown";
 
 export default function Home() {
   return (
-    <main className="min-h-screen p-8 animate-fadeIn bg-gradient-to-br from-[#1e2432] via-[#23293a] to-[#2d3548]">
-      <div className="max-w-7xl mx-auto space-y-8">
+    <main className="min-h-screen p-8 animate-fadeIn bg-gradient-to-br from-[#1e2432] via-[#23293a] to-[#2d3548] overflow-x-hidden">
+      <div className="max-w-7xl mx-auto space-y-8 overflow-x-hidden">
         {/* Add a colorful accent bar */}
         <div className="h-2 w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded mb-8"></div>
         {/* Hero Section */}
@@ -15,7 +16,7 @@ export default function Home() {
             Follow my 15-week experience as a Software Development Intern at VAB, 
             where I document my growth, challenges, and achievements in web development.
           </p>
-          <div className="flex gap-4 justify-center">
+          <div className="flex gap-4 justify-center flex-wrap">
             <Link
               href="/about"
               className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-3 rounded-lg transition-colors shadow"
@@ -31,9 +32,12 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Responsive Navigation Dropdown for Mobile */}
+        <MobileNavDropdown />
+
         {/* Latest Blog Post */}
-        <div className="bg-gradient-to-br from-purple-900/60 via-[#1e2432] to-blue-900/60 rounded-lg p-8 shadow-lg border border-purple-900/20">
-          <div className="flex justify-between items-center mb-6">
+        <div className="bg-gradient-to-br from-purple-900/60 via-[#1e2432] to-blue-900/60 rounded-lg p-8 shadow-lg border border-purple-900/20 overflow-x-hidden">
+          <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-2">
             <h2 className="text-2xl font-bold text-white">Latest Update</h2>
             <Link 
               href="/weeks"
@@ -43,7 +47,7 @@ export default function Home() {
             </Link>
           </div>
           <div className="bg-[#252b3b] rounded-lg p-6">
-            <div className="flex justify-between items-start mb-4">
+            <div className="flex flex-col sm:flex-row justify-between items-start mb-4 gap-2">
               <h3 className="text-xl font-semibold text-white">Week 16: Unit Testing</h3>
               <span className="text-sm text-gray-400">March 18-22, 2025</span>
             </div>
@@ -65,20 +69,7 @@ export default function Home() {
         </div>
 
         {/* Quick Overview */}
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-gradient-to-br from-blue-900/60 via-[#1e2432] to-purple-900/60 rounded-lg p-6 shadow-lg border border-blue-900/20">
-            <h3 className="text-lg font-semibold text-white mb-4">About the Internship</h3>
-            <p className="text-gray-300 mb-4">
-              A 15-week journey at VAB, focusing on Angular development and Sitecore implementation.
-            </p>
-            <Link 
-              href="/about"
-              className="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2"
-            >
-              Learn More →
-            </Link>
-          </div>
-
+        <div className="grid md:grid-cols-3 gap-6 overflow-x-hidden">
           <div className="bg-gradient-to-br from-pink-900/60 via-[#1e2432] to-blue-900/60 rounded-lg p-6 shadow-lg border border-pink-900/20">
             <h3 className="text-lg font-semibold text-white mb-4">Weekly Progress</h3>
             <p className="text-gray-300 mb-4">
