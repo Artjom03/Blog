@@ -44,20 +44,19 @@ export default function Home() {
           </div>
           <div className="bg-[#252b3b] rounded-lg p-6">
             <div className="flex justify-between items-start mb-4">
-              <h3 className="text-xl font-semibold text-white">Week 8: Component Development</h3>
+              <h3 className="text-xl font-semibold text-white">Week 16: Unit Testing</h3>
               <span className="text-sm text-gray-400">March 18-22, 2025</span>
             </div>
             <p className="text-gray-300 mb-4">
-              This week focused on component development and bug fixing. Key highlights include evaluation 
+              This week focused on Unit testing and bug fixing. Key highlights include evaluation 
               meetings with mentors and significant progress in website styling improvements.
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
-              <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">Angular</span>
-              <span className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">Development</span>
-              <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">Mentorship</span>
+              <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">Goals</span>
+              <span className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">Reflection</span>
             </div>
             <Link 
-              href="/weeks/8"
+              href="/weeks/16"
               className="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2"
             >
               Read More →
