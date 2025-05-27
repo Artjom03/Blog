@@ -3,8 +3,8 @@ import MobileNavDropdown from "@/app/components/MobileNavDropdown";
 
 export default function Home() {
   return (
-    <main className="min-h-screen p-8 animate-fadeIn bg-gradient-to-br from-[#1e2432] via-[#23293a] to-[#2d3548] overflow-x-hidden w-full max-w-full">
-      <div className="max-w-7xl mx-auto space-y-8 overflow-x-hidden w-full max-w-full">
+    <main className="min-h-screen p-8 animate-fadeIn bg-gradient-to-br from-[#1e2432] via-[#23293a] to-[#2d3548] overflow-x-hidden">
+      <div className="max-w-7xl mx-auto space-y-8 overflow-x-hidden">
         {/* Add a colorful accent bar */}
         <div className="h-2 w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded mb-8"></div>
         {/* Hero Section */}
@@ -69,20 +69,7 @@ export default function Home() {
         </div>
 
         {/* Quick Overview */}
-        <div className="grid md:grid-cols-3 gap-6 overflow-x-hidden w-full max-w-full">
-          <div className="bg-gradient-to-br from-blue-900/60 via-[#1e2432] to-purple-900/60 rounded-lg p-6 shadow-lg border border-blue-900/20">
-            <h3 className="text-lg font-semibold text-white mb-4">About the Internship</h3>
-            <p className="text-gray-300 mb-4">
-              A 15-week journey at VAB, focusing on Angular development and Sitecore implementation.
-            </p>
-            <Link 
-              href="/about"
-              className="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2"
-            >
-              Learn More →
-            </Link>
-          </div>
-
+        <div className="grid md:grid-cols-3 gap-6 overflow-x-hidden">
           <div className="bg-gradient-to-br from-pink-900/60 via-[#1e2432] to-blue-900/60 rounded-lg p-6 shadow-lg border border-pink-900/20">
             <h3 className="text-lg font-semibold text-white mb-4">Weekly Progress</h3>
             <p className="text-gray-300 mb-4">
@@ -106,6 +93,19 @@ export default function Home() {
               className="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2"
             >
               Read Posts
+            </Link>
+          </div>
+
+          <div className="bg-gradient-to-br from-blue-900/60 via-[#1e2432] to-purple-900/60 rounded-lg p-6 shadow-lg border border-blue-900/20">
+            <h3 className="text-lg font-semibold text-white mb-4">About the Internship</h3>
+            <p className="text-gray-300 mb-4">
+              A 17-week journey at VAB, focusing on Angular development and Sitecore implementation.
+            </p>
+            <Link 
+              href="/about"
+              className="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2"
+            >
+              Learn More →
             </Link>
           </div>
         </div>
