@@ -527,7 +527,7 @@ const weeks: WeekData[] = [
       </ul>
     `,
     days: [
-      { title: "Monday", tasks: ["Continued writing unit tests.", "Backlog refinements.", "Afternoon:", "-Sprint review", "-Retro / Sprint Planning", "Some more time for unit tests"], learnings: ["Unit tests", "Sprint review", "Retro", "Planning"] },
+      { title: "Monday", tasks: ["Continued writing unit tests.", "Backlog refinements.", "Afternoon:", "Sprint review", "Retro / Sprint Planning", "Some more time for unit tests"], learnings: ["Unit tests", "Sprint review", "Retro", "Planning"] },
       { title: "Tuesday", tasks: ["Unit tests"], learnings: ["Unit tests"] },
       { title: "Wednesday", tasks: ["Unit tests"], learnings: ["Unit tests"] },
       { title: "Thursday", tasks: ["Unit tests"], learnings: ["Unit tests"] },
