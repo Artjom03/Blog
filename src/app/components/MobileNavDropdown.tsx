@@ -4,13 +4,13 @@ import { useRouter } from "next/navigation";
 export default function MobileNavDropdown() {
   const router = useRouter();
   return (
-    <nav className="block sm:hidden w-full mb-6">
+    <nav className="block w-full mb-6 md:hidden lg:hidden xl:hidden 2xl:hidden">
       <select
         className="w-full px-4 py-2 rounded-lg bg-[#23293a] text-gray-200 border border-gray-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
+        defaultValue=""
         onChange={e => {
           if (e.target.value) router.push(e.target.value);
         }}
-        defaultValue=""
       >
         <option value="" disabled>Navigate to...</option>
         <option value="/">Home</option>
