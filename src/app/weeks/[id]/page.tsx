@@ -574,13 +574,13 @@ const weeks: WeekData[] = [
   }
 ];
 
-export default async function WeekPage(props: { params: { id: string } }) {
-  const params = await props.params
-  const weekNumber = parseInt(params.id)
-  const week = weeks.find(w => w.number === weekNumber)
+export default async function WeekPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const weekNumber = parseInt(id);
+  const week = weeks.find(w => w.number === weekNumber);
 
   if (!week) {
-    notFound()
+    notFound();
   }
 
   return (
