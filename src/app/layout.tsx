@@ -28,9 +28,7 @@ export default function RootLayout({
           <MobileNavDropdown />
         </div>
         {children}
-        <div className="sticky bottom-0 z-40 w-full">
-          <Footer />
-        </div>
+        <Footer />
       </body>
     </html>
   )
