@@ -17,6 +17,7 @@ export default function MobileNavDropdown() {
         <option value="/about">About Me</option>
         <option value="/weeks">Weekly Reports</option>
         <option value="/blog">Blog & Tutorials</option>
+        <option value="/experience">Experience</option>
       </select>
     </nav>
   );

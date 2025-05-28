@@ -16,24 +16,41 @@ export default function Home() {
             Follow my 15-week experience as a Software Development Intern at VAB, 
             where I document my growth, challenges, and achievements in web development.
           </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Link
-              href="/about"
-              className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-3 rounded-lg transition-colors shadow"
-            >
-              About Me
-            </Link>
-            <Link
-              href="/weeks"
-              className="bg-gradient-to-r from-pink-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 text-white px-6 py-3 rounded-lg transition-colors shadow"
-            >
-              View Weekly Reports
-            </Link>
-          </div>
         </div>
-
-        {/* Responsive Navigation Dropdown for Mobile */}
-        <MobileNavDropdown />
+        {/* Desktop navigation */}
+        <div className="hidden md:flex gap-4 justify-center flex-wrap">
+          <Link
+            href="/about"
+            className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-3 rounded-lg transition-colors shadow"
+          >
+            About Me
+          </Link>
+          <Link
+            href="/weeks"
+            className="bg-gradient-to-r from-pink-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 text-white px-6 py-3 rounded-lg transition-colors shadow"
+          >
+            View Weekly Reports
+          </Link>
+        </div>
+        {/* Mobile navigation (show same links as desktop, but always visible on mobile) */}
+        <div className="flex flex-col gap-4 mt-4 md:hidden">
+          <Link
+            href="/about"
+            className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-3 rounded-lg transition-colors shadow text-center"
+          >
+            About Me
+          </Link>
+          <Link
+            href="/weeks"
+            className="bg-gradient-to-r from-pink-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 text-white px-6 py-3 rounded-lg transition-colors shadow text-center"
+          >
+            View Weekly Reports
+          </Link>
+        </div>
+        {/* Mobile dropdown navigation */}
+        {/* <div className="block md:hidden mt-4">
+          <MobileNavDropdown />
+        </div> */}
 
         {/* Latest Blog Post */}
         <div className="bg-gradient-to-br from-purple-900/60 via-[#1e2432] to-blue-900/60 rounded-lg p-8 shadow-lg border border-purple-900/20 overflow-x-hidden">
