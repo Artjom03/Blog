@@ -15,17 +15,17 @@ export default function Home() {
             Follow my 15-week experience as a Software Development Intern at VAB, 
             where I document my growth, challenges, and achievements in web development.
           </p>
-          {/* Desktop navigation inside hero */}
-          <div className="hidden md:flex gap-4 justify-center flex-wrap mt-6">
+          {/* Navigation inside hero for all screens */}
+          <div className="flex flex-col md:flex-row gap-4 justify-center flex-wrap mt-6">
             <Link
               href="/about"
-              className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-3 rounded-lg transition-colors shadow"
+              className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-3 rounded-lg transition-colors shadow text-center"
             >
               About Me
             </Link>
             <Link
               href="/weeks"
-              className="bg-gradient-to-r from-pink-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 text-white px-6 py-3 rounded-lg transition-colors shadow"
+              className="bg-gradient-to-r from-pink-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 text-white px-6 py-3 rounded-lg transition-colors shadow text-center"
             >
               View Weekly Reports
             </Link>
