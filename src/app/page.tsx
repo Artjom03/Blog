@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import MobileNavDropdown from "@/app/components/MobileNavDropdown";
 
 export default function Home() {
   return (
