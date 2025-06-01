@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function MobileNavDropdown() {
   return (
-    <div className="md:hidden sticky top-0 z-50 bg-[#181c27] shadow-lg border-b border-blue-900/30 px-0 py-0 flex justify-center items-center">
+    <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-[#181c27] shadow-lg border-b border-blue-900/30 px-0 py-0 flex justify-center items-center">
       <nav className="w-full max-w-sm mx-auto my-3 rounded-2xl bg-gradient-to-r from-blue-900 via-[#23293a] to-purple-900 p-2 flex gap-1 shadow-lg border border-blue-900/40">
         <Link
           href="/"

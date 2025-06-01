@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-[#1a1f2b] min-h-screen flex flex-col`}>
         {/* Show Navbar on desktop (md+) and MobileNavDropdown on mobile */}
-        <div className="hidden md:block">
+        <div className="hidden md:block sticky top-0 z-50">
           <Navbar />
         </div>
         <div className="md:hidden">
