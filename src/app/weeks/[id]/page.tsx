@@ -492,7 +492,7 @@ const weeks: WeekData[] = [
     keyTechnologies: ["Angular", "TypeScript", "MySQL"],
     achievements: ["Completed final projects", "Prepared documentation", "Received internship completion certificate"],
     content: `
-      <h2>Internship Wrap-up</h2>
+      <h2>Week 14 Highlights</h2>
       <p>As my internship concludes, I reflect on the valuable experiences and skills I've gained:</p>
       <ul>
         <li>Successfully completed all assigned projects and tasks</li>
@@ -518,7 +518,7 @@ const weeks: WeekData[] = [
     keyTechnologies: ["Angular", "TypeScript", "MySQL"],
     achievements: ["Project completion", "Final presentation", "Feedback session"],
     content: `
-      <h2>Final Week Reflections</h2>
+      <h2>Week 15 Highlights</h2>
       <p>Looking back on my internship journey:</p>
       <ul>
         <li>Completed all assigned projects</li>
@@ -542,7 +542,7 @@ const weeks: WeekData[] = [
     keyTechnologies: [],
     achievements: [],
     content: `
-      <h2>Post-Internship Planning</h2>
+      <h2>Week 16 Highlights</h2>
       <p>Planning next steps and setting goals for the future.</p>
     `,
     days: [
@@ -561,7 +561,7 @@ const weeks: WeekData[] = [
     keyTechnologies: [],
     achievements: [],
     content: `
-      <h2>Looking Ahead</h2>
+      <h2>Week 17 Highlights</h2>
       <p>Reflecting on the internship and preparing for upcoming challenges.</p>
     `,
     days: [
