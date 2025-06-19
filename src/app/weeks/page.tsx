@@ -21,126 +21,126 @@ export default function WeeklyReports() {
       week: 0,
       title: "Preparation Week",
       description: "Setting up development environment, learning about VAB, and preparing for the internship journey.",
-      date: "January 29 - February 2, 2024",
+      date: "January 29 - February 2, 2025",
       tags: ['reflection', 'lessons-learned']
     },
     {
       week: 1,
       title: "First Steps at VAB",
       description: "Introduction to the team, getting familiar with the workplace, and initial project briefing.",
-      date: "February 5-9, 2024",
+      date: "February 5-9, 2025",
       tags: ['teambuilding', 'wins']
     },
     {
       week: 2,
       title: "Angular Fundamentals",
       description: "Deep dive into Angular framework, setting up first components, and learning about the project structure.",
-      date: "February 12-16, 2024",
+      date: "February 12-16, 2025",
       tags: ['code', 'lessons-learned']
     },
     {
       week: 3,
       title: "Component Development",
       description: "Building reusable components, implementing responsive designs, and working with Angular services.",
-      date: "February 19-23, 2024",
+      date: "February 19-23, 2025",
       tags: ['code', 'wins']
     },
     {
       week: 4,
       title: "Sitecore Integration",
       description: "Learning Sitecore CMS basics, understanding content management, and implementing first integrations.",
-      date: "February 26 - March 1, 2024",
+      date: "February 26 - March 1, 2025",
       tags: ['code', 'lessons-learned', 'fails']
     },
     {
       week: 5,
       title: "Advanced Angular Concepts",
       description: "Working with observables, state management, and complex component interactions.",
-      date: "March 4-8, 2024",
+      date: "March 4-8, 2025",
       tags: ['code', 'wins', 'lessons-learned']
     },
     {
       week: 6,
       title: "Team Collaboration",
       description: "Participating in code reviews, team meetings, and improving communication skills.",
-      date: "March 11-15, 2024",
+      date: "March 11-15, 2025",
       tags: ['teambuilding', 'reflection']
     },
     {
       week: 7,
       title: "Project Milestones",
       description: "Achieving key project goals, fixing critical bugs, and implementing new features.",
-      date: "March 18-22, 2024",
+      date: "March 18-22, 2025",
       tags: ['wins', 'code']
     },
     {
       week: 8,
       title: "Performance Optimization",
       description: "Improving application performance, implementing best practices, and code refactoring.",
-      date: "March 25-29, 2024",
+      date: "March 25-29, 2025",
       tags: ['code', 'wins', 'lessons-learned']
     },
     {
       week: 9,
       title: "Header Development Challenges",
       description: "Addressing header issues, collaborating with the mentor, and improving code structure.",
-      date: "April 1-5, 2024",
+      date: "April 1-5, 2025",
       tags: ['code', 'reflection']
     },
     {
       week: 10,
       title: "Navigation and Language Features",
       description: "Developing the navigation bar and adding language switching functionality.",
-      date: "April 8-12, 2024",
+      date: "April 8-12, 2025",
       tags: ['code', 'wins']
     },
     {
       week: 11,
       title: "CSS Debugging and Aansluitingsrecht",
       description: "Resolving CSS issues and starting work on the Aansluitingsrecht project.",
-      date: "April 15-19, 2024",
+      date: "April 15-19, 2025",
       tags: ['code', 'lessons-learned']
     },
     {
       week: 12,
       title: "Aansluitingsrecht Development",
       description: "Focused on developing features for the Aansluitingsrecht project.",
-      date: "April 22-26, 2024",
+      date: "April 22-26, 2025",
       tags: ['code', 'wins']
     },
     {
       week: 13,
       title: "Advanced Mapping Techniques",
       description: "Exploring advanced mapping techniques and improving project workflows.",
-      date: "April 29 - May 3, 2024",
+      date: "April 29 - May 3, 2025",
       tags: ['code', 'lessons-learned']
     },
     {
       week: 14,
       title: "Documentation & Handover",
       description: "Finalizing key features and preparing for project handoff.",
-      date: "May 6-10, 2024",
+      date: "May 6-10, 2025",
       tags: ['code', 'wins']
     },
     {
       week: 15,
       title: "Unit Testing & Sprint Review",
       description: "Wrapping up the internship experience and reflecting on the journey.",
-      date: "May 13-17, 2024",
+      date: "May 13-17, 2025",
       tags: ['reflection', 'lessons-learned']
     },
     {
       week: 16,
       title: "Inspect & Adapt / PI Planning",
       description: "Planning next steps and setting goals for the future.",
-      date: "May 20-24, 2024",
+      date: "May 20-24, 2025",
       tags: ['reflection', 'goals']
     },
     {
       week: 17,
       title: "Final Week Off",
       description: "Reflecting on the internship and preparing for upcoming challenges.",
-      date: "May 27-31, 2024",
+      date: "May 27-31, 2025",
       tags: ['reflection', 'goals']
     }
   ]

@@ -46,7 +46,7 @@ export default function Home() {
           <div className="bg-[#252b3b] rounded-lg p-6">
             <div className="flex flex-col sm:flex-row justify-between items-start mb-4 gap-2">
               <h3 className="text-xl font-semibold text-white">Week 16: Unit Testing</h3>
-              <span className="text-sm text-gray-400">March 18-22, 2025</span>
+              <span className="text-sm text-gray-400">May 20-24, 2025</span>
             </div>
             <p className="text-gray-300 mb-4">
               This week focused on Unit testing and bug fixing. Key highlights include evaluation 
