@@ -12,7 +12,7 @@ export default function Home() {
             Welcome to My Internship Journey
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Follow my 15-week experience as a Software Development Intern at VAB, 
+            Follow my 17-week experience as a Software Development Intern at VAB, 
             where I document my growth, challenges, and achievements in web development.
           </p>
           {/* Navigation inside hero for all screens */}
